@@ -1,0 +1,36 @@
+---
+import { Image } from "@astrojs/image/components";
+import image from "../../../public/images/osaka-night.jpg";
+
+import BtnLg from "./Buttons/Btn-lg.astro";
+---
+
+<section>
+  <div class="relative flex flex-col items-center justify-center">
+    <div>
+      <Image
+        src={image}
+        alt="Night scenery of Osaka"
+        fit="cover"
+        format="webp"
+        position="center"
+      />
+    </div>
+    <div
+      class="w-full h-full absolute z-10 top-0 flex flex-col items-center justify-center"
+      style="background-color: rgba(0,0,0,.4);"
+    >
+      <h2
+        class="max-w-xl text-white text-5xl font-heading font-bold text-center leading-tight mb-4"
+      >
+        Start your life in Osaka on the right foot
+      </h2>
+      <p class="text-white text-lg text-center max-w-xl mb-10">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <BtnLg text={"Contact"} href={"contact"} />
+    </div>
+  </div>
+  <div class=""></div>
+</section>

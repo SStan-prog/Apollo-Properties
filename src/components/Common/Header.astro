@@ -1,0 +1,17 @@
+---
+export interface Props {
+  heading: string;
+}
+
+const { heading } = Astro.props;
+---
+
+<header
+  style="background-image:  linear-gradient(97.23deg, #004380 0%, #0085D2 100%);"
+>
+  <h1
+    class="text-6xl text-white font-heading font-bold text-center py-24 px-10"
+  >
+    {heading}
+  </h1>
+</header>
