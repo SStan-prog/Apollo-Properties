@@ -1,0 +1,58 @@
+---
+import { Image } from "@astrojs/image/components";
+import Testimonial from "./Testimonial.astro";
+
+import debbie from "../../../public/images/testimonials/debbie.png";
+---
+
+<section>
+  <div class="flex flex-col items-center pb-20 pt-40 bg-grey-100 px-5 gap-20">
+    <Testimonial name="Name" country="Country" image>
+      <Image
+        src={debbie}
+        slot="image"
+        alt="Debbie"
+        class="rounded-full border-blue-200 border-4"
+      />
+      <div slot="testimonial">
+        My family and I have been regular visitors to Osaka for the last 10
+        years and each visit we have stayed with Apollo Properties. The
+        apartments are always clean and have everything we need. Bruce and
+        Masatoshi are highly professional and we always feel looked after. We
+        recommend Apollo apartments to family and friends when they come to stay
+        and they are always impressed with the value, price and location. And
+        that is why we will continue to book with them.
+      </div>
+    </Testimonial>
+
+    <Testimonial name="Name" country="Country">
+      <div slot="testimonial">
+        My family and I have been regular visitors to Osaka for the last 10
+        years and each visit we have stayed with Apollo Properties. The
+        apartments are always clean and have everything we need. Bruce and
+        Masatoshi are highly professional and we always feel looked after. We
+        recommend Apollo apartments to family and friends when they come to stay
+        and they are always impressed with the value, price and location. And
+        that is why we will continue to book with them.
+      </div>
+    </Testimonial>
+
+    <Testimonial name="Name" country="Country" image>
+      <Image
+        src={debbie}
+        slot="image"
+        alt="Debbie"
+        class="rounded-full border-blue-200 border-4"
+      />
+      <div slot="testimonial">
+        My family and I have been regular visitors to Osaka for the last 10
+        years and each visit we have stayed with Apollo Properties. The
+        apartments are always clean and have everything we need. Bruce and
+        Masatoshi are highly professional and we always feel looked after. We
+        recommend Apollo apartments to family and friends when they come to stay
+        and they are always impressed with the value, price and location. And
+        that is why we will continue to book with them.
+      </div>
+    </Testimonial>
+  </div>
+</section>
