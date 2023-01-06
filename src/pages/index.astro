@@ -1,8 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Blog from "../components/Home/Blog/index.astro";
 import FinalCta from "../components/Common/FinalCta.astro";
+
+import { getAllArticles } from "../sanity/api.js";
+
+const allArticles = await getAllArticles();
 ---
 
 <Layout title="Welcome to Astro.">
+  <Blog />
   <FinalCta />
 </Layout>

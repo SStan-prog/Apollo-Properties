@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Article from "../../components/Blog/Article.astro";
+import FinalCta from "../../components/Common/FinalCta.astro";
+import { getAllArticles } from "../../sanity/api.js";
+
+export async function getStaticPaths() {
+  const allArticles = await getAllArticles();
+  console.log(allArticles);
+
+  return allArticles.map((article: { slug: { current: any } }) => ({
+    params: { slug: article.slug.current },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+---
+
+<Layout title={article.title}>
+  <Article article={article} />
+  <FinalCta />
+</Layout>

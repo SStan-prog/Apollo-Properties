@@ -1,0 +1,43 @@
+---
+import { Image } from "@astrojs/image/components";
+import { urlForImage } from "../../../sanity/urlForImage";
+import Btn from "../../Common/Buttons/Btn.astro";
+
+import { getLatestArticle } from "../../../sanity/api";
+const data = await getLatestArticle();
+---
+
+<section>
+  <div
+    class="grid grid-cols-1 lg:grid-cols-2 py-20 px-5 sm:px-10 lg:px-20 gap-10 lg:gap-20 items-center max-w-[800px] lg:max-w-[1400px] mx-auto"
+  >
+    <div>
+      <!-- <Image
+        src={urlForImage(data.featuredImage).width(650).format("webp").url()}
+        alt={data.featuredImage.alt}
+        aspectRatio="16/9"
+      /> -->
+      <img
+        class="rounded-[30px] lg:rounded-[50px]"
+        src={urlForImage(data.featuredImage).width(800).format("webp").url()}
+        alt={data.featuredImage.alt}
+      />
+    </div>
+    <div class="">
+      <h2
+        class="text-blue-700 font-heading text-3xl lg:text-4xl font-bold mb-5"
+      >
+        {data.title}
+      </h2>
+      <p class="text-grey-600 font-body">{data.excerpt}</p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-10">
+        <Btn text="Read Article" href={`/blog/${data.slug.current}`} />
+        <a
+          href="/blog"
+          class="underline text-sm lg:text-lg text-blue-400 font-bold"
+          >See All Articles</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+---
+import { getLatestArticle } from "sanity/api";
+
+const latest = await getLatestArticle();
+
+import Layout from "layouts/Layout.astro";
+import Header from "components/Common/Header.astro";
+import Featured from "components/Blog/Featured.astro";
+---
+
+<Layout title="Blog">
+  <Header heading="Blog" />
+  <Featured featured={latest} />
+</Layout>

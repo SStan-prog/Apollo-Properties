@@ -1,4 +1,5 @@
 ---
+import Navbar from "../components/Common/Navbar";
 import Footer from "../components/Common/Footer.astro";
 export interface Props {
   title: string;
@@ -21,7 +22,8 @@ import "@fontsource/inter/700.css";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="">
+    <Navbar client:load />
     <slot />
     <Footer />
   </body>
