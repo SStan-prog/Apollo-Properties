@@ -13,10 +13,7 @@ const Navbar = () => {
         <div className="relative flex justify-between lg:grid lg:grid-cols-10 items-center">
           <div className=" col-span-3">
             <a href="/" className="">
-              <img
-                src={"../../../public/images/logo.png"}
-                alt="Apollo Properties"
-              />
+              <img src={"/images/logo.png"} alt="Apollo Properties" />
             </a>
           </div>
           <div className=" col-span-7 hidden lg:block">
@@ -49,7 +46,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="/contact"
-                  className="bg-blue-400 text-white text-lg font-body py-2 px-4 font-bold rounded-md shadow-lg inline-block max-w-[min-content] whitespace-nowrap"
+                  className="bg-blue-400 hover:bg-blue-600 text-white text-lg font-body py-2 px-4 font-bold rounded-md shadow-lg hover:shadow-none inline-block max-w-[min-content] whitespace-nowrap transition-all"
                 >
                   Contact
                 </a>

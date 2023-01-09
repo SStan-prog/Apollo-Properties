@@ -7,7 +7,7 @@ import { getLatestArticle } from "../../../sanity/api";
 const data = await getLatestArticle();
 ---
 
-<section>
+<section class="bg-grey-100">
   <div
     class="grid grid-cols-1 lg:grid-cols-2 py-20 px-5 sm:px-10 lg:px-20 gap-10 lg:gap-20 items-center max-w-[800px] lg:max-w-[1400px] mx-auto"
   >
@@ -30,11 +30,11 @@ const data = await getLatestArticle();
         {data.title}
       </h2>
       <p class="text-grey-600 font-body">{data.excerpt}</p>
-      <div class="mt-10 flex flex-col sm:flex-row gap-10">
+      <div class="mt-10 flex flex-col items-center sm:flex-row gap-10">
         <Btn text="Read Article" href={`/blog/${data.slug.current}`} />
         <a
           href="/blog"
-          class="underline text-sm lg:text-lg text-blue-400 font-bold"
+          class="underline text-sm lg:text-lg font-bold text-blue-400 hover:text-blue-600 transition-colors"
           >See All Articles</a
         >
       </div>

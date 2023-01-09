@@ -2,26 +2,29 @@
 import { Image } from "@astrojs/image/components";
 import image from "../../../public/images/osaka-night.jpg";
 
-import BtnLg from "./Buttons/Btn-lg.astro";
+import BtnLg from "./Buttons/BtnLg.astro";
 ---
 
-<section>
-  <div class="relative flex flex-col items-center justify-center">
-    <div>
-      <Image
-        src={image}
+<section
+  class="bg-final-cta bg-center bg-cover bg-[url('images/osaka-night-mobile.jpg')] sm:bg-[url('images/osaka-night.jpg')]"
+>
+  <div class="relative flex flex-col items-center justify-center w-full h-full">
+    <div class="w-full h-full">
+      <!-- <Image
+        src="images/osaka-night.jpg"
         alt="Night scenery of Osaka"
-        fit="cover"
         format="webp"
         position="center"
-      />
+        width="1920px"
+        aspectRatio={16 / 9}
+      /> -->
     </div>
+    <div class="absolute bg-[rgba(0,0,0,.4)] h-full w-full z-10"></div>
     <div
-      class="w-full h-full absolute z-10 top-0 flex flex-col items-center justify-center"
-      style="background-color: rgba(0,0,0,.4);"
+      class="relative px-5 py-20 lg:py-40 z-20 w-full h-full flex flex-col items-center justify-center"
     >
       <h2
-        class="max-w-xl text-white text-5xl font-heading font-bold text-center leading-tight mb-4"
+        class="max-w-xl text-white text-4xl lg:text-5xl font-heading font-bold text-center leading-tight mb-4"
       >
         Start your life in Osaka on the right foot
       </h2>

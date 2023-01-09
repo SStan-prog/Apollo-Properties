@@ -16,6 +16,7 @@ const { article } = Astro.props;
       src={urlForImage(article.featuredImage).width(800).format("webp").url()}
       alt={article.featuredImage.alt}
     />
+
     <div
       class="px-5 [&>p]:py-4 [&>p>a]:text-blue-600 [&>p>a]:font-bold [&>h2]:mb-2 [&>h3]:mb-2 [&>h4]:mb-2 [&>h2]:text-3xl [&>h2]:font-bold [&>h3]:text-2xl [&>h3]:font-bold [&>h4]:text-xl [&>h4]:font-bold [&>ul]:my-2 [&>ul]:ml-8 [&>ul>li]:my-1 [&>ul]:list-disc"
     >

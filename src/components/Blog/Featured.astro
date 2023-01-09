@@ -5,30 +5,32 @@ const { featured } = Astro.props;
 import Btn from "components/Common/Buttons/Btn.astro";
 ---
 
-<article>
-  <div
-    class="grid grid-cols-1 lg:grid-cols-2 py-20 px-5 sm:px-10 lg:px-20 gap-10 lg:gap-20 items-center max-w-[800px] lg:max-w-[1400px] mx-auto"
-  >
-    <div>
-      <img
-        class="rounded-[30px] lg:rounded-[50px]"
-        src={urlForImage(featured.featuredImage)
-          .width(800)
-          .format("webp")
-          .url()}
-        alt={featured.featuredImage.alt}
-      />
-    </div>
-    <div class="">
-      <h2
-        class="text-blue-700 font-heading text-3xl lg:text-4xl font-bold mb-5"
-      >
-        {featured.title}
-      </h2>
-      <p class="text-grey-600 font-body">{featured.excerpt}</p>
-      <div class="mt-10 flex flex-col sm:flex-row gap-10">
-        <Btn text="Read Article" href={`/blog/${featured.slug.current}`} />
+<section class="my-10">
+  <article>
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 py-20 px-5 sm:px-10 lg:px-20 gap-10 lg:gap-20 items-center max-w-[800px] lg:max-w-[1400px] mx-auto"
+    >
+      <div>
+        <img
+          class="rounded-[30px] lg:rounded-[50px]"
+          src={urlForImage(featured.featuredImage)
+            .width(800)
+            .format("webp")
+            .url()}
+          alt={featured.featuredImage.alt}
+        />
+      </div>
+      <div class="">
+        <h2
+          class="text-blue-700 font-heading text-3xl lg:text-4xl font-bold mb-5"
+        >
+          {featured.title}
+        </h2>
+        <p class="text-grey-600 font-body">{featured.excerpt}</p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-10">
+          <Btn text="Read Article" href={`/blog/${featured.slug.current}`} />
+        </div>
       </div>
     </div>
-  </div>
-</article>
+  </article>
+</section>

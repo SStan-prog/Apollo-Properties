@@ -11,3 +11,9 @@ export async function getAllArticles() {
   const articles = await useSanityClient().fetch(query);
   return articles;
 }
+
+export async function getAllListings() {
+  const query = groq`*[_type == "listing"] | order(_createdAt desc)`;
+  const listings = await useSanityClient().fetch(query);
+  return listings;
+}

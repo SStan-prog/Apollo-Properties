@@ -1,10 +1,14 @@
 ---
+import { getAllListings } from "sanity/api";
+
+const listings = await getAllListings();
+
 import Layout from "layouts/Layout.astro";
 import Header from "components/Common/Header.astro";
-import Listings from "components/Listings/index.astro";
+import Listings from "components/Listings/index";
 ---
 
 <Layout title="Available Listings">
   <Header heading={"Available Listings"} />
-  <Listings />
+  <Listings listings={listings} client:load />
 </Layout>

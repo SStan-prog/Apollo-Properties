@@ -5,9 +5,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-main": "linear-gradient(97.23deg, #004380 0%, #0085D2 100%);",
+        "final-cta": "linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4))",
       },
     },
     colors: {
+      transparent: "transparent",
       white: "#fff",
       black: "#000",
       grey: {
