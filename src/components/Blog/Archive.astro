@@ -2,7 +2,7 @@
 import article from "../../../sanity-project/schemas/article";
 import { urlForImage } from "sanity/urlForImage";
 const { articles } = Astro.props;
-console.log(articles);
+const articlesSliced = articles.slice(1);
 ---
 
 <section class="mb-20">
@@ -10,7 +10,7 @@ console.log(articles);
     class="grid grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-10 lg:gap-20 px-5 sm:px-10 lg:px-20 max-w-[800px] lg:max-w-[1400px] mx-auto"
   >
     {
-      articles.map((article: any) => {
+      articlesSliced.map((article: any) => {
         return (
           <a href={`/blog/${article.slug.current}`}>
             <article class="flex flex-col border-2 border-grey-200 rounded-[10px] sm:rounded-[20px] hover:shadow-lg hover:bg-blue-100 transition-all">
