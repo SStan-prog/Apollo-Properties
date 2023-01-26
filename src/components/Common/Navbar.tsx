@@ -1,5 +1,5 @@
-import { useState } from "react";
-import MobileMenu from "./MobileMenu";
+import { useState } from 'react';
+import MobileMenu from './MobileMenu';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -13,7 +13,11 @@ const Navbar = () => {
         <div className="relative flex justify-between lg:grid lg:grid-cols-10 items-center">
           <div className=" col-span-3">
             <a href="/" className="">
-              <img src={"/images/logo.png"} alt="Apollo Properties" />
+              <img
+                src={'/images/logo.png'}
+                alt="Apollo Properties"
+                className="h-auto w-full max-w-[107px]"
+              />
             </a>
           </div>
           <div className=" col-span-7 hidden lg:block">

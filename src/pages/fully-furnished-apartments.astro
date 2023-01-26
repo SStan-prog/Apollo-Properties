@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/FFA/Header/index.tsx';
+import Explanation from '../components/FFA/Explanation/index.astro';
+import Inclusions from '../components/FFA/Inclusions/index.astro';
+
+import { getAllArticles } from '../sanity/api.js';
+
+const allArticles = await getAllArticles();
+---
+
+<Layout title="Welcome to Astro.">
+  <Header />
+  <Explanation />
+  <Inclusions />
+</Layout>

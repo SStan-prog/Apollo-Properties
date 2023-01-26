@@ -1,0 +1,86 @@
+---
+import { Image } from '@astrojs/image/components';
+---
+
+<section>
+  <div
+    class="max-w-[800px] lg:max-w-[1400px] mx-auto py-24 grid grid-cols-1 lg:grid-cols-2 gap-20 px-5 sm:px-10 -mb-20 sm:-mb-40 lg:mb-0"
+  >
+    <div class="">
+      <h2
+        class="text-blue-700 text-3xl sm:text-4xl font-heading font-bold mb-5"
+      >
+        How it works
+      </h2>
+      <p class="text-grey-700 mb-2">
+        Fully Furnished or Fully Equipped Apartments, are apartments that allow
+        people arriving directly from overseas a very easy transition into life
+        here in Japan. Yes of course it is possible to arrive and stay in a
+        hotel and start looking around for properties on your own when you first
+        arrive, but most likely you may be occupied with the starting of a new
+        job, may have little or no Japanese language experience and may be
+        generally at a lost as to where to begin your search. We recommend that
+        people take a bit of time to get to know the city before making any
+        decisions regarding where they plan to live long-term.
+      </p>
+      <p class="text-grey-700 mb-2">
+        After a couple months of commuting to and from your new workplace or
+        school etc. and having the time to understand where you will spend your
+        free time hours, we believe you will be better able to make a
+        well-informed decision of where you would like to live for the duration
+        of your stay in Japan should it be long term.
+      </p>
+      <p class="text-grey-700 mb-2">
+        Thus, this system of arriving, unpacking and starting your new life
+        appeals to many newcomers here in Japan. The relatively short 3-month
+        minimum stay contract allows you the freedom to decide where you would
+        ultimately like to live in relation to your work as well as your private
+        life. In fact, many Apollo Properties` customers stay in the
+        fully-furnished apartment they rent for years on end.{' '}
+      </p>
+      <p class="text-grey-700 mb-2">
+        Note: Generally speaking, non-furnished apartments offered through most
+        local Japanese real estate offices cannot be reserved from overseas as
+        you must be here in person in order to complete a detailed application
+        process. The application process can take up to 2 weeks depending on
+        your application details. The management company of the apartment you
+        are interested in renting will then either accept or deny your
+        application. This process can be time consuming thus making it a good
+        decision to rent a fully-furnished apartment or a private room in one of
+        our share houses for when you first arrive in Osaka.{' '}
+      </p>
+    </div>
+
+    <div class="relative w-full max-h-min grid grid-cols-5 grid-rows-2">
+      <div class="col-[1/5] relative z-10 row-start-1 max-w-[400px]">
+        <div
+          class="bg-white p-3 rounded-[20px] sm:rounded-[40px] translate-y-[60%]"
+        >
+          <Image
+            src="/images/ffa/apartment.jpg"
+            alt="A fully furnished apartment located in Namba, Osaka."
+            width={400}
+            aspectRatio={4 / 3}
+            format="webp"
+            fit="cover"
+            position="center"
+            background="transparent"
+            class="rounded-[15px] sm:rounded-[35px]"
+          />
+        </div>
+      </div>
+      <Image
+        src="/images/ffa/osaka.jpg"
+        alt="A road of shops in Shin-sekai, Osaka."
+        width={500}
+        aspectRatio={4 / 3}
+        format="webp"
+        fit="cover"
+        position="center"
+        background="transparent"
+        quality="100"
+        class="rounded-[20px] sm:rounded-[40px] relative col-[2/6] row-[1/2] row-start-1"
+      />
+    </div>
+  </div>
+</section>
