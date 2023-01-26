@@ -1,8 +1,6 @@
-import React from 'react';
-
 const index = () => {
   return (
-    <header className="relative bg-bottom bg-cover bg-[url('images/home-header-mobile.jpg')] sm:bg-[url('images/home-header.jpg')] ">
+    <header className="relative bg-bottom bg-cover  bg-[url('/images/home-header-mobile.jpg')] sm:bg-[url('/images/home-header.jpg')]">
       <div className="">
         <div className="absolute bg-[rgba(0,0,0,.4)] h-full w-full z-10"></div>
         <div className="relative z-20 px-2 sm:px-20 pt-20 pb-10 sm:py-40">
