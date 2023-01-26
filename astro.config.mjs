@@ -16,12 +16,11 @@ import react from "@astrojs/react";
 import sanity from "astro-sanity";
 
 // https://astro.build/config
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind(),
-    image(),
-    solidJs(),
-    react(),
-    sanity({ projectId: "3ans7o2s", dataset: "production" }),
-  ],
+  integrations: [tailwind(), image(), solidJs(), react(), sanity({
+    projectId: "3ans7o2s",
+    dataset: "production"
+  })]
 });
