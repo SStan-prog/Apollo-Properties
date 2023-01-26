@@ -24,5 +24,6 @@ export default defineConfig({
       projectId: '3ans7o2s',
       dataset: 'production',
     }),
+    image(),
   ],
 });
