@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/FFA/Header/index.tsx';
 import Explanation from '../components/FFA/Explanation/index.astro';
 import Inclusions from '../components/FFA/Inclusions/index.astro';
+import Process from '../components/FFA/Process/index.astro';
+import FinalCta from '../components/Common/FinalCta.astro';
 
 import { getAllArticles } from '../sanity/api.js';
 
@@ -13,4 +15,6 @@ const allArticles = await getAllArticles();
   <Header />
   <Explanation />
   <Inclusions />
+  <Process />
+  <FinalCta />
 </Layout>

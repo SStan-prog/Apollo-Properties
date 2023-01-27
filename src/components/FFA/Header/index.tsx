@@ -16,7 +16,7 @@ const index = () => {
                 Contact
               </a>
               <a
-                href="/lisitngs"
+                href="/listings"
                 className="font-bold text-xl sm:text-3xl text-white hover:text-grey-200 underline transition-colors"
               >
                 See Listings

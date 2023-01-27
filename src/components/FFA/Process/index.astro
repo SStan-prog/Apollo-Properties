@@ -1,0 +1,124 @@
+---
+import { Image } from '@astrojs/image/components';
+---
+
+<section>
+  <div
+    class="max-w-[800px] lg:max-w-[1400px] mx-auto py-24 grid grid-cols-1 lg:grid-cols-2 gap-32 px-5 sm:px-10 -mb-40 sm:-mb-32 lg:mb-0"
+  >
+    <div
+      class="row-[2] lg:row-[1] relative w-full lg:max-h-[500px] grid grid-cols-5 grid-rows-2"
+    >
+      <div class="col-[3/6] relative z-10 row-start-1 max-w-[400px]">
+        <div
+          class="bg-white p-3 rounded-[20px] sm:rounded-[40px] translate-y-[60%]"
+        >
+          <Image
+            src="/images/ffa/kitchen-1.jpg"
+            alt="A fully furnished apartment located in Namba, Osaka."
+            width={400}
+            aspectRatio={4 / 3}
+            format="webp"
+            fit="cover"
+            position="center"
+            background="transparent"
+            class="rounded-[15px] sm:rounded-[35px]"
+            quality={100}
+          />
+        </div>
+      </div>
+      <Image
+        src="/images/ffa/bedroom-3.jpg"
+        alt="The Apollo Properties office located in Namba, Osaka."
+        width={500}
+        aspectRatio={4 / 3}
+        format="webp"
+        fit="cover"
+        position="center"
+        background="transparent"
+        class="rounded-[20px] sm:rounded-[40px] relative col-[1/5] row-[1/2] row-start-1"
+      />
+    </div>
+
+    <div class="">
+      <h2
+        class="text-blue-700 text-3xl sm:text-4xl font-heading font-bold mb-5"
+      >
+        Our move-in process
+      </h2>
+      <p class="text-grey-700 mb-5">
+        Below is a brief outline of the process to obtain a fully-furnished
+        apartment through Apollo Properties Osaka.
+      </p>
+      <ol class="flex flex-col gap-2 list-decimal ml-4 text-grey-700 mb-5">
+        <li class="">
+          First and foremost send us an email through the contact page on this
+          site regarding the type of property you are searching for.
+        </li>
+        <li class="">
+          View the online list of properties we currently have available or have
+          coming available and decide upon an apartment or share house that best
+          suits your needs. If you are not planning to arrive for a few months
+          please inquire as to upcoming openings that might not yet be posted on
+          the site.
+        </li>
+        <li class="">
+          After having decided upon a place that meets your timing, pricing as
+          well as size and location requirements, please let us know which place
+          you have decided to reserve.
+        </li>
+        <li class="">
+          Please wait for a confirmation email from Apollo Properties after
+          which we will send you a Paypal money request for 20,000 Japanese yen
+          to be used as a holding deposit.
+        </li>
+        <li class="">
+          After having completed the money request please send us your arrival
+          details to Osaka. (Train or flight itinerary) If you are currently in
+          Japan please just let us know the day and time you would like to meet
+          and move into the apartment.
+        </li>
+        <li class="">
+          Having received your arrival details, we will send you a detailed
+          information attachment by email. The details will include the
+          apartment address, arrival/pick-up/meeting place, due on arrival costs
+          as well the rental agreement for you to look over at your leisure
+          before arriving.
+        </li>
+        <li class="">
+          On the day you arrive we will make copies of your passport and or
+          alien registration card. We will collect the due on arrivals costs
+          amount in cash in Japanese yen in full and will explain the contract
+          and answer any questions you may have.
+        </li>
+        <li class="">
+          After the contracts have been signed and all the paper work has been
+          completed we will then take you to your new home and explain how to
+          operate things in the apartment such as the washing machine, stove,
+          air-conditioner etc.
+        </li>
+        <li class="">
+          Time permitting, we will give you a brief neighborhood orientation and
+          point out places of interest such as super markets, the post office,
+          parks, the city office etc. This could take place the following day if
+          you arrive later in the day.
+        </li>
+        <li class="">
+          Finally, you will be given the key to your new home and you will be
+          ready to start your new adventure in your new apartment here in
+          downtown Osaka.
+        </li>
+      </ol>
+      <p class="text-grey-700 mb-5">
+        Note: You will need to register your new address at the local ward
+        office soon after moving in and should you need assistance with this, we
+        will be able to go with you and help you.
+      </p>
+      <h3 class="text-blue-700 text-lg sm:text-xl font-heading font-bold">
+        In short, we are all about service. If you need help and we are able to
+        provide it, we will be glad to do so. Allow us the opportunity and we
+        will prove it to you!
+      </h3>
+    </div>
+  </div>
+</section>

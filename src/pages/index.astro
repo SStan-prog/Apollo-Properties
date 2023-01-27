@@ -2,7 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Home/Header';
 import Features from '../components/Home/Features';
+import Explanation from '../components/Home/Explanation/index.astro';
 import Testimonials from '../components/Home/Testimonials';
+import About from '../components/Home/About/index.astro';
 import Blog from '../components/Home/Blog/index.astro';
 import FinalCta from '../components/Common/FinalCta.astro';
 
@@ -14,7 +16,9 @@ const allArticles = await getAllArticles();
 <Layout title="Welcome to Astro.">
   <Header />
   <Features />
+  <Explanation />
   <Testimonials client:idle />
+  <About />
   <Blog />
   <FinalCta />
 </Layout>

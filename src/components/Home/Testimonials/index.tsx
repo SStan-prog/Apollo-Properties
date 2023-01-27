@@ -1,16 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef } from 'react';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import type { Swiper as SwiperCore } from "swiper/types";
-import "swiper/css";
-import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperCore } from 'swiper/types';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const index = () => {
   const swiperRef = useRef<SwiperCore>();
   return (
     <section
       style={{
-        backgroundImage: "linear-gradient(97.23deg, #004380 0%, #0085D2 100%)",
+        backgroundImage: 'linear-gradient(97.23deg, #004380 0%, #0085D2 100%)',
       }}
     >
       <div className="flex flex-col items-center pt-20 pb-10">
@@ -23,7 +23,7 @@ const index = () => {
             <img src="icons/quote.svg" alt="testimonials" />
           </div>
           <div className="relative pt-5 lg:pt-0">
-            {" "}
+            {' '}
             <Swiper
               slidesPerView={1}
               onBeforeInit={(swiper) => {
@@ -34,13 +34,15 @@ const index = () => {
               <SwiperSlide>
                 <div className="lg:px-14 flex flex-col lg:items-center">
                   <p className="lg:text-center text-grey-100 text-sm sm:text-base">
-                    I’ve been a tenant with Apollo Properties for almost a year.
-                    Bruce and Masatoshi have been very helpful since my move to
-                    Japan. They're very quick to respond and get a hold of.
-                    Bruce was able to help me set up my internet and replace a
-                    couple of appliances that have broken within a day. Staying
-                    at Apollo Properties have been instrumental to my move to
-                    Japan.
+                    My family and I have been regular visitors to Osaka for the
+                    last 10 years and each visit we have stayed with Apollo
+                    Properties. The apartments are always clean and have
+                    everything we need. Bruce and Masatoshi are highly
+                    professional and we always feel looked after. We recommend
+                    Apollo apartments to family and friends when they come to
+                    stay and they are always impressed with the value, price and
+                    location. And that is why we will continue to book with
+                    them.
                   </p>
                   <div className="mt-5 flex gap-5 items-center">
                     <img
@@ -50,7 +52,7 @@ const index = () => {
                     />
                     <div className="flex flex-col  text-grey-100">
                       <p className="font-bold">Debbie</p>
-                      <p>student</p>
+                      <p>Family</p>
                     </div>
                   </div>
                 </div>
@@ -69,11 +71,11 @@ const index = () => {
                   <div className="mt-5 flex gap-5 items-center">
                     <img
                       className=" w-[80px] h-[80px] rounded-full border-2 border-blue-200"
-                      src="images/testimonials/debbie.png"
+                      src="images/testimonials/justin.png"
                       alt="debbie"
                     />
                     <div className="flex flex-col  text-grey-100">
-                      <p className="font-bold">Debbie</p>
+                      <p className="font-bold">Justin</p>
                       <p>student</p>
                     </div>
                   </div>
