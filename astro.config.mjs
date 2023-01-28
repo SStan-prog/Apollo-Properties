@@ -15,14 +15,12 @@ import sanity from 'astro-sanity';
 // https://astro.build/config
 
 // https://astro.build/config
+import svelte from "@astrojs/svelte";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind(),
-    image(),
-    react(),
-    sanity({
-      projectId: '3ans7o2s',
-      dataset: 'production',
-    }),
-  ],
+  integrations: [tailwind(), image(), react(), sanity({
+    projectId: '3ans7o2s',
+    dataset: 'production'
+  }), svelte()]
 });
