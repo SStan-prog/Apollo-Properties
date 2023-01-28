@@ -7,7 +7,13 @@ const index = () => {
         We would love to hear from you.
         <br /> How can we help?
       </h2>
-      <form method="POST" action="/thank-you" data-netlify="true">
+      <form
+        method="POST"
+        action="/thank-you"
+        data-netlify="true"
+        name="contact"
+      >
+        <input type="hidden" name="form-name" value="contact" />
         <div className="flex flex-col md:flex-row gap-5 w-full mb-6">
           <div className="flex flex-col w-full">
             <input

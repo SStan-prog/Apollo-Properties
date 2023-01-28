@@ -1456,7 +1456,7 @@
   "resolved" "https://registry.npmjs.org/@sanity/color/-/color-2.2.2.tgz"
   "version" "2.2.2"
 
-"@sanity/dashboard@^3.0.0":
+"@sanity/dashboard@^3.0.0", "@sanity/dashboard@^3.1.2":
   "integrity" "sha512-6SGjeDC1PiQ5fVRI4uDIv6twSvbHuvWA/PThM3Waqr+/+fWgBWLxgbnTecmr8GGBdOwgu4Zcf8BwTZxwQJxg/A=="
   "resolved" "https://registry.npmjs.org/@sanity/dashboard/-/dashboard-3.1.2.tgz"
   "version" "3.1.2"
