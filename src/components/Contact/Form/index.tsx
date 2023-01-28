@@ -19,6 +19,8 @@ const index = () => {
             <input
               type="text"
               id="first"
+              required
+              name="First name"
               placeholder="First name"
               className="peer bg-grey-100 text-grey-700 p-3 rounded border-2 border-transparent focus:border-blue-200 outline-none placeholder-transparent transition-colors "
             />
@@ -38,6 +40,8 @@ const index = () => {
             <input
               type="text"
               id="last"
+              required
+              name="Last name"
               placeholder="Last name"
               className="peer bg-grey-100 text-grey-700 p-3 rounded border-2 border-transparent focus:border-blue-200 outline-none placeholder-transparent transition-colors "
             />
@@ -59,6 +63,8 @@ const index = () => {
             <input
               type="email"
               id="email"
+              required
+              name="Email"
               placeholder="Email address"
               className="peer bg-grey-100 text-grey-700 p-3 rounded border-2 border-transparent focus:border-blue-200 outline-none placeholder-transparent transition-colors "
             />
@@ -78,6 +84,7 @@ const index = () => {
             <input
               type="phone"
               id="Phone"
+              name="Phone name"
               placeholder="Phone number"
               className="peer bg-grey-100 text-grey-700 p-3 rounded border-2 border-transparent focus:border-blue-200 outline-none placeholder-transparent transition-colors "
             />
@@ -98,6 +105,8 @@ const index = () => {
           <div className="flex flex-col w-full relative">
             <textarea
               id="message"
+              name="Message"
+              required
               rows={5}
               placeholder="message"
               className="peer resize-y bg-grey-100 text-grey-700 p-3 rounded border-2 border-transparent focus:border-blue-200 outline-none placeholder-transparent transition-colors "
