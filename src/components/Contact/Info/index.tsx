@@ -2,7 +2,7 @@ import React from 'react';
 
 const index = () => {
   return (
-    <div className="">
+    <div className="px-3 sm:px-0">
       <h2 className=" text-xl sm:text-3xl font-heading font-bold text-blue-600 mb-6">
         Contact
       </h2>

@@ -4,7 +4,7 @@ const index = () => {
       <div className="">
         <div className="absolute bg-[rgba(0,0,0,.4)] h-full w-full z-10"></div>
         <div className=" max-w-[1520px] mx-auto">
-          <div className="relative z-20 px-2 sm:px-20 pt-20 pb-10 sm:py-40">
+          <div className="relative z-20 px-5 sm:px-20 pt-20 pb-10 sm:py-40">
             <h1 className="text-4xl sm:text-6xl text-white drop-shadow-bmxl font-bold font-heading max-w-[1000px] leading-snug sm:leading-snug mb-5 sm:mb-14">
               About our fully furnished apartments
             </h1>

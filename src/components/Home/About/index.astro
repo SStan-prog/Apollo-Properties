@@ -4,14 +4,14 @@ import { Image } from '@astrojs/image/components';
 
 <section>
   <div
-    class="max-w-[800px] lg:max-w-[1400px] mx-auto py-24 grid grid-cols-1 lg:grid-cols-2 gap-32 px-5 sm:px-10 sm:-mb-52 lg:mb-0"
+    class="max-w-[800px] lg:max-w-[1400px] mx-auto py-24 grid grid-cols-1 lg:grid-cols-2 gap-32 px-5 sm:px-10 -mb-20 sm:-mb-52 lg:mb-0"
   >
     <div
       class="row-[2] lg:row-[1] relative w-full lg:max-h-[500px] grid grid-cols-5 grid-rows-2"
     >
       <div class="col-[3/6] relative z-10 row-start-1 max-w-[400px]">
         <div
-          class="bg-white p-3 rounded-[20px] sm:rounded-[40px] translate-y-[60%]"
+          class="bg-white p-2 sm:p-3 rounded-[20px] sm:rounded-[40px] translate-y-[60%]"
         >
           <Image
             src="/images/ffa/inclusions.jpg"
@@ -21,7 +21,6 @@ import { Image } from '@astrojs/image/components';
             format="webp"
             fit="cover"
             position="center"
-            background="transparent"
             class="rounded-[15px] sm:rounded-[35px]"
             quality={100}
           />
@@ -35,7 +34,6 @@ import { Image } from '@astrojs/image/components';
         format="webp"
         fit="cover"
         position="center"
-        background="transparent"
         class="rounded-[20px] sm:rounded-[40px] relative col-[1/5] row-[1/2] row-start-1"
       />
     </div>
@@ -54,13 +52,13 @@ import { Image } from '@astrojs/image/components';
       <ul class="flex flex-col gap-4">
         <li class="flex gap-3 justify-between mb-2">
           <span
-            class="bg-[url('/icons/check.svg')] h-[16px] w-[16px] bg-cover mt-1"
+            class="bg-[url('/icons/check.svg')] h-[16px] w-full max-w-[16px] bg-cover mt-1"
           ></span>{' '}
           <p class="text-grey-600 w-full">25+ years experience</p>
         </li>
         <li class="flex gap-3 mb-2">
           <span
-            class="bg-[url('/icons/check.svg')] h-[16px] w-[16px] bg-cover mt-1"
+            class="bg-[url('/icons/check.svg')] h-[16px] w-full max-w-[16px] bg-cover mt-1"
           ></span>{' '}
           <p class="text-grey-600">
             Appeal point - Lorem ipsum dolor sit amet.
@@ -68,14 +66,14 @@ import { Image } from '@astrojs/image/components';
         </li>
         <li class="flex gap-3 mb-2">
           <span
-            class="bg-[url('/icons/check.svg')] h-[16px] w-[16px] bg-cover mt-1"
+            class="bg-[url('/icons/check.svg')] h-[16px] w-full max-w-[16px] bg-cover mt-1"
           ></span>{' '}
           <p class="text-grey-600">
             Appeal point - Lorem ipsum dolor sit amet.
           </p>
         </li>
       </ul>
-      <div class="flex gap-10 mt-20 items-baseline">
+      <div class="flex gap-10 mt-10 sm:mt-20 items-baseline">
         <a
           href="/contact"
           class="bg-blue-400 hover:bg-blue-600 text-white text-lg sm:text-2xl font-body py-2 px-4 sm:py-3 sm:px-6 inline-block font-bold rounded-md hover:shadow-none shadow-lg whitespace-nowrap transition-all"

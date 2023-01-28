@@ -4,7 +4,7 @@ const index = () => {
       <div className="">
         <div className="absolute bg-[rgba(0,0,0,.4)] h-full w-full z-10"></div>
         <div className=" max-w-[1520px] mx-auto">
-          <div className="relative z-20 px-2 sm:px-20 pt-20 pb-10 sm:py-40">
+          <div className="relative z-20 px-5 sm:px-20 pt-20 pb-10 sm:py-40">
             <div className="gap-10 items-center mb-5 hidden sm:flex">
               <span className="font-bold text-blue-700 bg-blue-100 rounded-full px-4 py-2">
                 Services in English

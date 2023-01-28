@@ -61,7 +61,7 @@
         </div>
         <button class="flex flex-col gap-[9px]  lg:hidden px-2 " on:click={toggle} aria-label="Open mobile menu"> 
           <div class="w-[37px] h-1 bg-blue-400 rounded origin-[0%_50%] transition-transform {open ? " rotate-45" : ""}"></div>
-          <div class="w-8 h-1 bg-blue-400 rounded transition-opacity {open ? " opacity-0" : ""}"  ></div>
+          <div class="w-[37px] h-1 bg-blue-400 rounded transition-opacity {open ? " opacity-0" : ""}"  ></div>
           <div class="w-[37px] h-1 bg-blue-400 rounded origin-[0%_50%] transition-transform {open ? "-rotate-45" : ""}"></div>
         </button>
       </div>

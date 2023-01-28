@@ -1,9 +1,9 @@
 ---
-import { Image } from "@astrojs/image/components";
-import { urlForImage } from "../../../sanity/urlForImage";
-import Btn from "../../Common/Buttons/Btn.astro";
+import { Image } from '@astrojs/image/components';
+import { urlForImage } from '../../../sanity/urlForImage';
+import Btn from '../../Common/Buttons/Btn.astro';
 
-import { getLatestArticle } from "../../../sanity/api";
+import { getLatestArticle } from '../../../sanity/api';
 const data = await getLatestArticle();
 ---
 
@@ -19,7 +19,7 @@ const data = await getLatestArticle();
       /> -->
       <img
         class="rounded-[30px] lg:rounded-[50px]"
-        src={urlForImage(data.featuredImage).width(800).format("webp").url()}
+        src={urlForImage(data.featuredImage).width(800).format('webp').url()}
         alt={data.featuredImage.alt}
       />
     </div>
@@ -30,13 +30,19 @@ const data = await getLatestArticle();
         {data.title}
       </h2>
       <p class="text-grey-600 font-body">{data.excerpt}</p>
-      <div class="mt-10 flex flex-col items-center sm:flex-row gap-10">
-        <Btn text="Read Article" href={`/blog/${data.slug.current}`} />
+      <div class="mt-10 flex sm:items-center flex-col sm:flex-row gap-10">
+        <a
+          href={`/blog/${data.slug.current}`}
+          class="bg-blue-400 hover:bg-blue-600 text-white text-lg sm:text-2xl font-body py-2 px-4 sm:py-3 sm:px-6 inline-block font-bold rounded-md hover:shadow-none shadow-lg whitespace-nowrap max-w-[min-content] transition-all"
+        >
+          Read Article
+        </a>
         <a
           href="/blog"
-          class="underline text-sm lg:text-lg font-bold text-blue-400 hover:text-blue-600 transition-colors"
-          >See All Articles</a
+          class="font-bold text-lg sm:text-2xl text-blue-400 hover:text-blue-600 underline transition-colors"
         >
+          See All Articles
+        </a>
       </div>
     </div>
   </div>
