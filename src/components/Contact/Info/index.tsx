@@ -8,8 +8,8 @@ const index = () => {
       </h2>
       <div className="mb-6">
         <p className="text-blue-600 text-lg">E-mail</p>
-        <a href="mailto:info@apolloproperties.co.jp">
-          info@apolloproperties.co.jp
+        <a href="mailto:info@apollopropertiesosaka.com">
+          info@apollopropertiesosaka.com
         </a>
       </div>
       <div className="mb-6 flex flex-col gap-2">
