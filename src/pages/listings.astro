@@ -1,14 +1,17 @@
 ---
-import { getAllListings } from "sanity/api";
+import { getAllListings } from 'sanity/api';
 
 const listings = await getAllListings();
 
-import Layout from "layouts/Layout.astro";
-import Header from "components/Common/Header.astro";
-import Listings from "components/Listings/index";
+import Layout from 'layouts/Layout.astro';
+import Header from 'components/Common/Header.astro';
+import Listings from 'components/Listings/index';
 ---
 
-<Layout title="Available Listings">
-  <Header heading={"Available Listings"} />
+<Layout
+  title="Available Listings"
+  description="Fully Furnished or Fully Equipped Apartments, are apartments that allow people arriving directly from overseas a very easy transition into life here in Japan."
+>
+  <Header heading={'Available Listings'} />
   <Listings listings={listings} client:load />
 </Layout>

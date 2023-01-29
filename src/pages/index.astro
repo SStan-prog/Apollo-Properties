@@ -13,7 +13,10 @@ import { getAllArticles } from '../sanity/api.js';
 const allArticles = await getAllArticles();
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout
+  title="Blog"
+  description="We are a Japanese and Canadian owned company that has been providing the Ex-Pat community here in Osaka Japan with quality fully-furnished housing since 2001."
+>
   <Header />
   <Features />
   <Explanation />

@@ -1,17 +1,20 @@
 ---
-import { getLatestArticle } from "sanity/api";
-import { getAllArticles } from "sanity/api";
+import { getLatestArticle } from 'sanity/api';
+import { getAllArticles } from 'sanity/api';
 
 const latest = await getLatestArticle();
 const allArticles = await getAllArticles();
 
-import Layout from "layouts/Layout.astro";
-import Header from "components/Common/Header.astro";
-import Featured from "components/Blog/Featured.astro";
-import Archive from "components/Blog/Archive.astro";
+import Layout from 'layouts/Layout.astro';
+import Header from 'components/Common/Header.astro';
+import Featured from 'components/Blog/Featured.astro';
+import Archive from 'components/Blog/Archive.astro';
 ---
 
-<Layout title="Blog">
+<Layout
+  title="Blog"
+  description="We are a Japanese and Canadian owned company that has been providing the Ex-Pat community here in Osaka Japan with quality fully-furnished housing since 2001."
+>
   <Header heading="Blog" />
   <Featured featured={latest} />
   <Archive articles={allArticles} />
