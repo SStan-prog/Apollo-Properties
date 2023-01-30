@@ -49,4 +49,16 @@ import '@fontsource/inter/700.css';
     border-radius: 50px;
     border: solid 1px hsl(209, 100%, 26%);
   }
+
+  .aspectFix::before {
+    content: '';
+    float: left;
+    padding-top: <100% / aspect ratio>;
+  }
+
+  .aspectFix::after {
+    content: '';
+    float: left;
+    padding-top: <100% / aspect ratio>;
+  }
 </style>
