@@ -1,198 +1,165 @@
 ---
 import { Image } from '@astrojs/image/components';
-import Testimonial from './Testimonial.astro';
-
-import debbie from '../../../public/images/testimonials/debbie.png';
-import justin from '../../../public/images/testimonials/justin.png';
-import heather from '../../../public/images/testimonials/heather.jpeg';
-import crystalyn from '../../../public/images/testimonials/crystalyn.jpeg';
+import Testimonial from './Testimonial';
 ---
 
-<section>
-  <div class="flex flex-col items-center pb-20 pt-40 bg-grey-100 px-5 gap-20">
-    <Testimonial name="Debbie" country="Australia" image>
-      <Image
-        src={debbie}
-        slot="image"
-        alt="Debbie"
-        class="rounded-full border-blue-200 border-4"
-      />
-      <div slot="testimonial">
-        My family and I have been regular visitors to Osaka for the last 10
-        years and each visit we have stayed with Apollo Properties. The
-        apartments are always clean and have everything we need. Bruce and
-        Masatoshi are highly professional and we always feel looked after. We
-        recommend Apollo apartments to family and friends when they come to stay
-        and they are always impressed with the value, price and location. And
-        that is why we will continue to book with them.
-      </div>
+<section class="bg-grey-100">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 pb-20 pt-40 px-5 gap-x-5 lg:gap-x-20 gap-y-20 mx-auto max-w-[1200px] justify-items-center"
+  >
+    <Testimonial
+      name="Debbie"
+      country="Australia"
+      image="../../../public/images/testimonials/debbie.png"
+      client:idle
+      excerpt="My family and I have been regular visitors to Osaka for the last 10 years and each visit we have stayed with Apollo Properties."
+    >
+      The apartments are always clean and have everything we need. Bruce and
+      Masatoshi are highly professional and we always feel looked after. We
+      recommend Apollo apartments to family and friends when they come to stay
+      and they are always impressed with the value, price and location. And that
+      is why we will continue to book with them.
     </Testimonial>
 
-    <Testimonial name="Justin" country="Student" image>
-      <Image
-        src={justin}
-        slot="image"
-        alt="Justin"
-        width={150}
-        height={150}
-        fit="cover"
-        position="center"
-        class="rounded-full border-blue-200 border-4"
-      />
-      <div slot="testimonial">
-        I've been a tenant with Apollo Properties for almost a year. Bruce and
-        Masatoshi have been very helpful since my move to Japan. They're very
-        quick to respond and get a hold of. Bruce was able to help me set up my
-        internet and replace a couple of appliances that have broken within a
-        day. Staying at Apollo Properties have been instrumental to my move to
-        Japan.
-      </div>
+    <Testimonial
+      name="Justin"
+      country="Student"
+      image="../../../public/images/testimonials/justin.png"
+      client:idle
+      excerpt=" I've been a tenant with Apollo Properties for almost a year. Bruce and Masatoshi have been very helpful since my move to Japan. "
+    >
+      They're very quick to respond and get a hold of. Bruce was able to help me
+      set up my internet and replace a couple of appliances that have broken
+      within a day. Staying at Apollo Properties have been instrumental to my
+      move to Japan.
     </Testimonial>
 
-    <Testimonial name="Etienne" country="">
-      <div slot="testimonial">
-        From the moment I originally wrote to them up until my check out after
-        four years and a half of living in an apartment provided by Apollo
-        Properties, I've always felt like I was in good hands. Incredibly kind
-        and helpful English speaking staff always giving great assistance and
-        help, along with a comprehensible apartment contract without any hidden
-        fees or complicated clauses made my time staying with Apollo Properties
-        a relaxing one, during which I felt right at home from day one, also
-        helped by the fact that the apartment came fully furnished and equipped
-        with everything it needed to function. I highly recommend Apollo
-        Properties! I'm not sure if your new website will feature ratings, but
-        if it does I would definitely rank my stay overall a 5 out of 5! Thank
-        you again for the great service during the last four years and a half!
-      </div>
+    <Testimonial
+      name="Etienne"
+      country=""
+      client:idle
+      excerpt=" From the moment I originally wrote to them up until my check out after four years and a half of living in an apartment provided by Apollo Properties, I've always felt like I was in good hands."
+    >
+      Incredibly kind and helpful English speaking staff always giving great
+      assistance and help, along with a comprehensible apartment contract
+      without any hidden fees or complicated clauses made my time staying with
+      Apollo Properties a relaxing one, during which I felt right at home from
+      day one, also helped by the fact that the apartment came fully furnished
+      and equipped with everything it needed to function. I highly recommend
+      Apollo Properties! I'm not sure if your new website will feature ratings,
+      but if it does I would definitely rank my stay overall a 5 out of 5! Thank
+      you again for the great service during the last four years and a half!
     </Testimonial>
 
-    <Testimonial name="Lachie and Kimi" country="">
-      <div slot="testimonial">
-        Apartments are in good locations for transport. Having the apartment
-        set-up with the essentials made it an easy move-in process. Bruce is
-        always quick to respond to any questions about the apartment or
-        appliances, and maintenance has always been organised quickly.
-      </div>
+    <Testimonial
+      name="Lachie and Kimi"
+      country=""
+      client:idle
+      excerpt="      Apartments are in good locations for transport. Having the apartment set-up with the essentials made it an easy move-in process."
+    >
+      Bruce is always quick to respond to any questions about the apartment or
+      appliances, and maintenance has always been organised quickly.
     </Testimonial>
 
-    <Testimonial name="Jonathan" country="">
-      <div slot="testimonial">
-        As a current tenant of an Apollo Properties apartment for over a year.
-        Bruce and Masatoshi have always provided very helpful assistance, and
-        are quick to respond to any emails and queries regarding the apartment
-        and local amenities. The apartment itself has served as a fantastic
-        home-base to life in Osaka and is located in a very convenient, yet
-        quiet location, with great transport links nearby to easily explore the
-        myriad of hotspots the city has to offer. The apartment also came fully
-        furnished, including white goods and working internet from day 1, which
-        made for a hassle-free move and meant I could settle in right away. I
-        would highly recommend Apollo Properties if you want to enjoy a
-        stress-free stay in Osaka, whether your trip is for just a few days or
-        much longer.
-      </div>
+    <Testimonial
+      name="Jonathan"
+      country=""
+      client:idle
+      excerpt="  As a current tenant of an Apollo Properties apartment for over a year. Bruce and Masatoshi have always provided very helpful assistance, and are quick to respond to any emails and queries regarding the apartment and local amenities."
+    >
+      The apartment itself has served as a fantastic home-base to life in Osaka
+      and is located in a very convenient, yet quiet location, with great
+      transport links nearby to easily explore the myriad of hotspots the city
+      has to offer. The apartment also came fully furnished, including white
+      goods and working internet from day 1, which made for a hassle-free move
+      and meant I could settle in right away. I would highly recommend Apollo
+      Properties if you want to enjoy a stress-free stay in Osaka, whether your
+      trip is for just a few days or much longer.
     </Testimonial>
 
-    <Testimonial name="Susan and Cameron Griffiths" country="">
-      <div slot="testimonial">
-        When we moved to Nagoya from Australia, Apollo made our transition a
-        much smoother process than it would have been if we'd tried to organise
-        our own accommodation. Everything was organised for us - gas,
-        electricity and internet. Electricity and gas bills are paid through
-        Apollo too, reducing the number of monthly bills we have to remember to
-        pay. We have an older apartment in a convenient location in the centre
-        of the city and it came furnished with everything we need for daily
-        life. Our monthly rent seems quite reasonable considering the
-        convenience of the location and Apollo's services.
-      </div>
+    <Testimonial
+      name="Susan and Cameron Griffiths"
+      country=""
+      client:idle
+      excerpt=" When we moved to Nagoya from Australia, Apollo made our transition a much smoother process than it would have been if we'd tried to organise our own accommodation."
+    >
+      Everything was organised for us - gas, electricity and internet.
+      Electricity and gas bills are paid through Apollo too, reducing the number
+      of monthly bills we have to remember to pay. We have an older apartment in
+      a convenient location in the centre of the city and it came furnished with
+      everything we need for daily life. Our monthly rent seems quite reasonable
+      considering the convenience of the location and Apollo's services.
     </Testimonial>
 
-    <Testimonial name="Heather Henderson" country="" image>
-      <Image
-        src={heather}
-        slot="image"
-        alt="Heather"
-        width={150}
-        height={150}
-        fit="cover"
-        position="center"
-        class="rounded-full border-blue-200 border-4"
-      />
-      <div slot="testimonial">
-        Renting my apartment from Apollo Properties was the easiest thing I did
-        when moving to Japan. The process of viewing the apartment and moving in
-        was seamless. I read so many stories online about how difficult it is
-        for foreigners to rent in Japan, but Apollo Properties made all those
-        worries disappear. They offer great prices in prime locations around
-        Japan. The staff is wonderful to chat with and they always make sure
-        everything is going well in the apartment. I couldn't recommend a better
-        company to work with!
-      </div>
+    <Testimonial
+      name="Heather Henderson"
+      country=""
+      image="../../../public/images/testimonials/heather.jpeg"
+      client:idle
+      excerpt=" Renting my apartment from Apollo Properties was the easiest thing I did when moving to Japan. The process of viewing the apartment and moving in was seamless."
+    >
+      I read so many stories online about how difficult it is for foreigners to
+      rent in Japan, but Apollo Properties made all those worries disappear.
+      They offer great prices in prime locations around Japan. The staff is
+      wonderful to chat with and they always make sure everything is going well
+      in the apartment. I couldn't recommend a better company to work with!
     </Testimonial>
 
-    <Testimonial name="Heather Henderson" country="" image>
-      <Image
-        src={crystalyn}
-        slot="image"
-        alt="Heather"
-        width={150}
-        height={150}
-        fit="cover"
-        position="center"
-        class="rounded-full border-blue-200 border-4"
-      />
-      <div slot="testimonial">
-        <div class="[&>p]:mb-2">
-          <p>
-            We lived in the Sanko Heights building in Osaka from April 2014
-            until July 2020. Bruce was an excellent landlord to us for those six
-            years. He always gave us a copy of our bill so we could keep track
-            of our expenses, and the payment process by bank account transfer
-            was easy.
-          </p>
-          <p>
-            The apartment was pre-furnished, and whenever we had any issues with
-            any furniture in the apartment, all we had to do was let Bruce know,
-            and he would replace that furniture for free. We had items such as
-            our refrigerator and microwave replaced when those items had issues
-            or malfunctioned, and it was always an easy and smooth process.
-            Bruce always responded to any of our requests or issues within a
-            very timely manner, and it was always a pleasure talking to him and
-            his associate Masatoshi.
-          </p>
-          <p>
-            Whenever there were any non-furniture issues, which were instead
-            fixed by the owner of the building, Bruce was very helpful in
-            facilitating contact with the owners, who only spoke Japanese. We
-            can speak Japanese to an extent, but it was always reassuring to
-            know that Bruce would help us out with that communication if
-            necessary. There were a few emergencies that happened during our
-            time there, but with his help they were always resolved quickly.
-          </p>
-          <p>
-            The rent rate, for a furnished apartment in the heart of Osaka, was
-            very reasonable, and all the furniture was of great quality.
-          </p>
-          <p>
-            Bruce assisted us in moving in by picking us up from our bus from
-            the airport when we arrived in Japan in 2014. After we lived in
-            temporary housing for a month, he also helped us move into our
-            apartment. When we moved out, he assisted us with that as well.
-          </p>
-          <p>
-            After we moved out of the apartment, Bruce was very straightforward
-            and timely with communicating with us regarding the return of our
-            deposit. The deposit situation was just as it was originally written
-            in our contract, and we were very grateful that we were able to
-            receive our deposit back, since this can be very difficult in Japan.
-          </p>
-          <p>
-            We were both very grateful for all the help, assistance, and quick
-            communication provided over the years. We would recommend Apollo
-            Properties to anyone needing a decent and well-priced apartment in
-            Japan, especially for foreigners who are new to Japan and don't
-            understand all the ins and outs of renting in Japan.
-          </p>
-        </div>
+    <Testimonial
+      name="Crystalyn and Matthew Hodgkins"
+      country=""
+      image="../../../public/images/testimonials/crystalyn.jpeg"
+      client:idle
+      excerpt=" We lived in the Sanko Heights building in Osaka from April 2014 until July 2020. Bruce was an excellent landlord to us for those six years."
+    >
+      <div class="[&>p]:mb-2">
+        <p>
+          He always gave us a copy of our bill so we could keep track of our
+          expenses, and the payment process by bank account transfer was easy.
+        </p>
+        <p>
+          The apartment was pre-furnished, and whenever we had any issues with
+          any furniture in the apartment, all we had to do was let Bruce know,
+          and he would replace that furniture for free. We had items such as our
+          refrigerator and microwave replaced when those items had issues or
+          malfunctioned, and it was always an easy and smooth process. Bruce
+          always responded to any of our requests or issues within a very timely
+          manner, and it was always a pleasure talking to him and his associate
+          Masatoshi.
+        </p>
+        <p>
+          Whenever there were any non-furniture issues, which were instead fixed
+          by the owner of the building, Bruce was very helpful in facilitating
+          contact with the owners, who only spoke Japanese. We can speak
+          Japanese to an extent, but it was always reassuring to know that Bruce
+          would help us out with that communication if necessary. There were a
+          few emergencies that happened during our time there, but with his help
+          they were always resolved quickly.
+        </p>
+        <p>
+          The rent rate, for a furnished apartment in the heart of Osaka, was
+          very reasonable, and all the furniture was of great quality.
+        </p>
+        <p>
+          Bruce assisted us in moving in by picking us up from our bus from the
+          airport when we arrived in Japan in 2014. After we lived in temporary
+          housing for a month, he also helped us move into our apartment. When
+          we moved out, he assisted us with that as well.
+        </p>
+        <p>
+          After we moved out of the apartment, Bruce was very straightforward
+          and timely with communicating with us regarding the return of our
+          deposit. The deposit situation was just as it was originally written
+          in our contract, and we were very grateful that we were able to
+          receive our deposit back, since this can be very difficult in Japan.
+        </p>
+        <p>
+          We were both very grateful for all the help, assistance, and quick
+          communication provided over the years. We would recommend Apollo
+          Properties to anyone needing a decent and well-priced apartment in
+          Japan, especially for foreigners who are new to Japan and don't
+          understand all the ins and outs of renting in Japan.
+        </p>
       </div>
     </Testimonial>
   </div>
