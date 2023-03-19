@@ -16,7 +16,14 @@ export default {
       validation: (Rule: any) => Rule.required(),
     },
     {name: 'price', type: 'string', title: 'Price', validation: (Rule: any) => Rule.required()},
-
+    {name: 'size', type: 'string', title: 'Size', validation: (Rule: any) => Rule.required()},
+    {
+      name: 'availability',
+      type: 'string',
+      title: 'Available from',
+      validation: (Rule: any) => Rule.required(),
+    },
+    {name: 'description', type: 'blockContent', title: 'Description'},
     {
       name: 'images',
       type: 'array',

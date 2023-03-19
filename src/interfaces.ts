@@ -3,5 +3,8 @@ export default interface ListingType {
   name: string;
   address?: string;
   price?: string;
+  availability?: string;
+  description?: string;
+  size?: string;
   images?: [];
 }
