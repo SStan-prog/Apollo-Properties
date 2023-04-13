@@ -4,6 +4,11 @@ export default {
   title: 'Listings',
   fields: [
     {
+      name: 'hideListing',
+      type: 'boolean',
+      title: 'Hide Listing',
+    },
+    {
       name: 'name',
       type: 'string',
       title: 'Name',
@@ -17,11 +22,20 @@ export default {
     },
     {name: 'price', type: 'string', title: 'Price', validation: (Rule: any) => Rule.required()},
     {name: 'size', type: 'string', title: 'Size', validation: (Rule: any) => Rule.required()},
+    // {
+    //   name: 'availability',
+    //   type: 'string',
+    //   title: 'Available from',
+    //   validation: (Rule: any) => Rule.required(),
+    // },
     {
       name: 'availability',
-      type: 'string',
+      type: 'date',
       title: 'Available from',
       validation: (Rule: any) => Rule.required(),
+      options: {
+        dateFormat: 'MMMM Do YYYY',
+      },
     },
     {name: 'description', type: 'blockContent', title: 'Description'},
     {

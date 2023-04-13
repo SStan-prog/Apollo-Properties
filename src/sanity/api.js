@@ -1,4 +1,4 @@
-import { useSanityClient, groq } from "astro-sanity";
+import { useSanityClient, groq } from 'astro-sanity';
 
 export async function getLatestArticle() {
   const query = groq`*[_type == "article"] | order(_createdAt desc)[0] `;
@@ -13,7 +13,7 @@ export async function getAllArticles() {
 }
 
 export async function getAllListings() {
-  const query = groq`*[_type == "listing"] | order(_createdAt desc)`;
+  const query = groq`*[_type == "listing"] | order(availability asc)`;
   const listings = await useSanityClient().fetch(query);
   return listings;
 }

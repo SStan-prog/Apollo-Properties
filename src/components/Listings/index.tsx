@@ -1,14 +1,18 @@
-import React, { useState } from "react";
-import type ListingType from "interfaces";
-import Menu from "./Menu";
-import Listing from "./Listing";
+import React, { useState } from 'react';
+import type ListingType from 'interfaces';
+import Menu from './Menu';
+import Listing from './Listing';
 
 interface ListingsProps {
   listings: ListingType[];
 }
 
 const index = ({ listings }: ListingsProps) => {
-  const listingsMeta = listings.map(({ _id, name }) => ({ _id, name }));
+  const listingsMeta = listings.map(({ _id, name, hideListing }) => ({
+    _id,
+    name,
+    hideListing,
+  }));
 
   const [activeListing, setActiveListing] = useState(listingsMeta[0]._id);
 
