@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import type ListingType from 'interfaces';
 import Menu from './Menu';
 import Listing from './Listing';
@@ -8,7 +8,11 @@ interface ListingsProps {
 }
 
 const index = ({ listings }: ListingsProps) => {
-  const listingsMeta = listings.map(({ _id, name, hideListing }) => ({
+  const activeListings = listings.filter((listing) => {
+    if (!listing.hideListing) return listing;
+  });
+
+  const listingsMeta = activeListings.map(({ _id, name, hideListing }) => ({
     _id,
     name,
     hideListing,
@@ -28,7 +32,7 @@ const index = ({ listings }: ListingsProps) => {
             />
           </div>
           <div className="w-full">
-            <Listing listings={listings} activeListing={activeListing} />
+            <Listing listings={activeListings} activeListing={activeListing} />
           </div>
         </div>
       </div>
