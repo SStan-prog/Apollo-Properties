@@ -27,7 +27,7 @@ const Slider = ({ images }: SliderProps) => {
                 src={urlForImage(image)
                   .width(1000)
                   .height(750)
-                  .format('webp')
+                  .format('jpg')
                   .url()}
                 alt={image['alt']}
                 className="rounded-[20px] md:rounded-[40px] aspect-[4/3] object-contain aspectFix"
