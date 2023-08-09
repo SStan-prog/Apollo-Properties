@@ -4,6 +4,7 @@ import type { Swiper as SwiperCore } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { urlForImage } from 'sanity/urlForImage';
+import { urlFor } from '../../sanity/imageBuilder.js';
 
 interface SliderProps {
   images: [] | undefined;
@@ -20,14 +21,14 @@ const Slider = ({ images }: SliderProps) => {
         }}
         loop
       >
-        {images?.map((image, i) => {
+        {images?.map((image: any, i) => {
           return (
             <SwiperSlide key={i}>
               <img
-                src={urlForImage(image)
+                src={urlFor(image.asset)
                   .width(1000)
                   .height(750)
-                  .format('jpg')
+                  .format('webp')
                   .url()}
                 alt={image['alt']}
                 className="rounded-[20px] md:rounded-[40px] aspect-[4/3] object-contain aspectFix"

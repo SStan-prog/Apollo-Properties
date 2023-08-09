@@ -18,6 +18,8 @@
     "@fontsource/inter": "^4.5.14",
     "@fontsource/kumbh-sans": "^4.5.11",
     "@portabletext/react": "^2.0.2",
+    "@sanity/client": "^6.4.4",
+    "@sanity/image-url": "^1.0.2",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
     "astro": "^2.0.2",
