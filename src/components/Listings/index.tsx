@@ -20,6 +20,8 @@ const index = ({ listings }: ListingsProps) => {
 
   const [activeListing, setActiveListing] = useState(listingsMeta[0]._id);
 
+  console.log(listings[0].slug);
+
   return (
     <section className="bg-grey-100">
       <div className="max-w-[1400px] mx-auto lg:px-10 lg:py-20">
