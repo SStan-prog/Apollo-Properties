@@ -1,4 +1,5 @@
 export default interface ListingType {
+  slug: any;
   _id: string;
   name: string;
   hideListing: boolean;

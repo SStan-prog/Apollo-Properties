@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Home/Header';
 import Contact from '../../components/Contact';
 import { getAllListings } from '../../sanity/api.js';
+import Listing from '../../components/Listings/index';
 
 export async function getStaticPaths() {
   const listings = await getAllListings();
@@ -18,6 +19,9 @@ export async function getStaticPaths() {
 }
 
 const { listing } = Astro.props;
+console.log(listing);
 ---
 
-<Layout title={'test'} description={'test'}>{listing.name}</Layout>
+<Layout title={listing.name} description={listing.description}>
+  <!-- <Listing listings={listing} client:load /> -->
+</Layout>
