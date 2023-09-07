@@ -7,6 +7,7 @@ interface ListingsProps {
 }
 
 const index = ({ listings }: ListingsProps) => {
+  console.log('Listings:', listings);
   const activeListings = listings.filter((listing) => {
     if (!listing.hideListing) return listing;
   });
