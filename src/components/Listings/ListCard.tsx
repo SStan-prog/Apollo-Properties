@@ -18,7 +18,7 @@ const ListCard: React.FC<ListCardProps> = ({
   activeListing,
   setActiveListing,
 }) => {
-  console.log(listing.slug);
+  console.log(listing.slug, listing.name);
   return (
     <div className="bg-white lg:shadow py-10 px-8 sm:p-4 rounded-lg w-300 h-150">
       <div className="flex flex-wrap ">
