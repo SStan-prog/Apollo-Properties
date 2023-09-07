@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Home/Header';
+import Contact from '../../components/Contact';
+import { getAllListings } from '../../sanity/api.js';
+
+export async function getStaticPaths() {
+  const listings = await getAllListings();
+
+  return listings.map((listing: { slug: { current: any } }) => ({
+    params: { slug: listing.slug.current },
+    props: { listing },
+  }));
+}
+
+const { listing } = Astro.props;
+---
+
+<Layout title={listing.name} description={listing.description}>
+
+  </div>
+</Layout>
