@@ -9,6 +9,7 @@ const acitveListings = listings.filter((listing: any) => {
 import Layout from 'layouts/Layout.astro';
 import Header from 'components/Common/Header.astro';
 import Listings from 'components/Listings/index';
+import FinalCta from 'components/Common/FinalCta.astro';
 ---
 
 <Layout
@@ -17,4 +18,5 @@ import Listings from 'components/Listings/index';
 >
   <Header heading={'Available Listings'} />
   <Listings listings={acitveListings} client:load />
+  <FinalCta />
 </Layout>

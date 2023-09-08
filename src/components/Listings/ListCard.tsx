@@ -10,7 +10,6 @@ interface ListCardProps {
 }
 
 const ListCard: React.FC<ListCardProps> = ({ listing }) => {
-  console.log(listing.slug);
   return (
     <div className="bg-white lg:shadow py-8 px-8 sm:p-4 rounded-lg w-auto">
       <div className="flex flex-wrap">

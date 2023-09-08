@@ -14,7 +14,7 @@ const index = ({ listings }: ListingsProps) => {
       <div className="max-w-[1400px] mx-auto lg:px-10 lg:py-20">
         <div className="flex flex-col items-center lg:items-start lg:flex-row lg:gap-10 xl:gap-32 justify-items-center">
           <div className="grid grid-cols-2 gap-10 w-full">
-            {listings.map((listing, index) => (
+            {listings.map((listing) => (
               <div key={listing._id}>
                 <ListCard listing={listing} />
               </div>

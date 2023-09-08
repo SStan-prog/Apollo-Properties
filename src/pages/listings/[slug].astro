@@ -1,9 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Home/Header';
-import Contact from '../../components/Contact';
 import { getAllListings } from '../../sanity/api.js';
-import Listing from '../../components/Listings/index';
+import FinalCta from 'components/Common/FinalCta.astro';
+import { PortableText } from '@portabletext/react';
+import Slider from 'components/Listings/Slider';
+import moment from 'moment';
+import ListingSideBar from 'components/Listings/ListingSideBar';
 
 export async function getStaticPaths() {
   const listings = await getAllListings();
@@ -11,17 +14,79 @@ export async function getStaticPaths() {
   const acitveListings = listings.filter((listing: any) => {
     if (!listing.hideListing) return listing;
   });
-
   return acitveListings.map((listing: { slug: { current: any } }) => ({
     params: { slug: listing?.slug?.current },
     props: { listing },
   }));
 }
 
-const { listing } = Astro.props;
+const { listing, listings } = Astro.props;
 console.log(listing);
 ---
 
-<Layout title={listing.name} description={listing.description}>
-  <!-- <Listing listings={listing} client:load /> -->
+<Layout title={listing.name} description={'test'}>
+  <section class="flex items-start py-20 bg-grey-100 px-10 gap-5 md:gap-10">
+    <div class="flex flex-1 w-auto">
+      <div class="bg-white lg:shadow py-10 px-8 sm:p-10  rounded-none lg:rounded-2xl w-2/3">
+        <div class="flex flex-col items-start w-full">
+          <div class=" flex flex-col md:flex-row justify-between w-full">
+            <div class=" mb-4 md:mb-0">
+              <h2 class="text-blue-700 font-bold text-3xl mb-1">
+                {listing.name}
+              </h2>
+              <p class=" text-grey-600 text-xl mb-5">
+                {listing.address}
+              </p>
+            </div>
+  
+            <p class=" text-blue-600 text-lg mb-2 ">
+              <span class="text-2xl md:text-3xl font-bold">
+                {' '}
+                ¥{listing.price}
+              </span>{' '}
+              <span class=" whitespace-nowrap">per month</span>
+            </p>
+          </div>
+  
+          <div class="flex flex-col w-full gap-2">
+            <p class=" text-grey-600 text-xl">
+              <strong class="text-blue-600">Available from:</strong>{' '}
+              {moment(listing.availability).format('MMMM Do, YYYY')}
+            </p>
+            <p class=" text-grey-600 text-xl">
+              <strong class="text-blue-600">Size:</strong>{' '}
+              {listing.size} m<sup>2</sup>
+            </p>
+          </div>
+          <a
+            href="/contact"
+            class="bg-blue-400 hover:bg-blue-600 text-white text-lg sm:text-2xl font-body py-2 px-4 inline-block font-bold rounded-md hover:shadow-none shadow-lg whitespace-nowrap transition-all mt-10"
+          >
+            Contact Us About This Listing
+          </a>
+          <div class="w-full my-10">
+            <Slider images={listing.images} />
+          </div>
+          <div class="">
+            <p class="text-blue-600 font-bold text-xl">
+              About the property
+            </p>
+            <div class="text-grey-600 text-lg">
+              <PortableText value={listing.description} />
+            </div>
+            <a
+              href="/contact"
+              class="bg-blue-400 hover:bg-blue-600 text-white text-lg sm:text-2xl font-body py-2 px-4 inline-block font-bold rounded-md hover:shadow-none shadow-lg whitespace-nowrap transition-all mt-10"
+            >
+              Contact Us About This Listing
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ListingSideBar listings={listings} />
+    </div>
+  </section>
+  <FinalCta />
 </Layout>
+
