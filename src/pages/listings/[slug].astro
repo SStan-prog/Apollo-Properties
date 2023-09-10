@@ -20,40 +20,43 @@ export async function getStaticPaths() {
   }));
 }
 
-const { listing, listings } = Astro.props;
-console.log(listing);
+const allListings = await getAllListings();
+
+const { listing } = Astro.props;
 ---
 
 <Layout title={listing.name} description={'test'}>
   <section class="flex items-start py-20 bg-grey-100 px-10 gap-5 md:gap-10">
     <div class="flex flex-1 px-10">
-      <div class="bg-white lg:shadow py-10 px-8 sm:p-10  rounded-none lg:rounded-2xl">
+      <div
+        class="bg-white lg:shadow py-10 px-8 sm:p-10 rounded-none lg:rounded-2xl"
+      >
         <div class="flex flex-col items-start w-full">
-          <div class=" flex flex-col md:flex-row justify-between w-full">
-            <div class=" mb-4 md:mb-0">
+          <div class="flex flex-col md:flex-row justify-between w-full">
+            <div class="mb-4 md:mb-0">
               <h2 class="text-blue-700 font-bold text-3xl mb-1">
                 {listing.name}
               </h2>
-              <p class=" text-grey-600 text-xl mb-5">
+              <p class="text-grey-600 text-xl mb-5">
                 {listing.address}
               </p>
             </div>
-  
-            <p class=" text-blue-600 text-lg mb-2 ">
+
+            <p class="text-blue-600 text-lg mb-2">
               <span class="text-2xl md:text-3xl font-bold">
                 {' '}
                 ¥{listing.price}
               </span>{' '}
-              <span class=" whitespace-nowrap">per month</span>
+              <span class="whitespace-nowrap">per month</span>
             </p>
           </div>
-  
+
           <div class="flex flex-col w-full gap-2">
-            <p class=" text-grey-600 text-xl">
+            <p class="text-grey-600 text-xl">
               <strong class="text-blue-600">Available from:</strong>{' '}
               {moment(listing.availability).format('MMMM Do, YYYY')}
             </p>
-            <p class=" text-grey-600 text-xl">
+            <p class="text-grey-600 text-xl">
               <strong class="text-blue-600">Size:</strong>{' '}
               {listing.size} m<sup>2</sup>
             </p>
@@ -65,12 +68,10 @@ console.log(listing);
             Contact Us About This Listing
           </a>
           <div class="w-full my-10">
-            <Slider images={listing.images} />
+            <Slider images={listing.images} client:load />
           </div>
           <div class="">
-            <p class="text-blue-600 font-bold text-xl">
-              About the property
-            </p>
+            <p class="text-blue-600 font-bold text-xl">About the property</p>
             <div class="text-grey-600 text-lg">
               <PortableText value={listing.description} />
             </div>
@@ -80,13 +81,11 @@ console.log(listing);
             >
               Contact Us About This Listing
             </a>
-            </div>
           </div>
         </div>
       </div>
-      <ListingSideBar listing={listing}/>
     </div>
+    <ListingSideBar currentListing={listing} allListings={allListings} />
   </section>
-  <FinalCta />
 </Layout>
-
+<FinalCta />
