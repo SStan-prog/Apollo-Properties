@@ -1,0 +1,48 @@
+---
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { urlFor } from '../../sanity/imageBuilder.js'
+
+const { images, swiper } = Astro.props;
+
+function handleSlidePrev() {
+  if (swiper) {
+    swiper.slidePrev();
+  }
+}
+
+function handleSlideNext() {
+  if (swiper) {
+    swiper.slideNext();
+  }
+}
+---
+
+<div class="imageSlider">
+  <Swiper slidesPerView={1} loop>
+    {images.map((image: any, i: number) => (
+      <SwiperSlide key={i}>
+        <img
+          src={urlFor(image.asset)
+            .width(1000)
+            .height(750)
+            .format('webp')
+            .url()}
+          alt={image['alt']}
+          class="rounded-[20px] md:rounded-[40px] aspect-[4/3] object-contain aspectFix"
+        />
+      </SwiperSlide>
+    ))}
+  </Swiper>
+  <button
+    on:click={handleSlidePrev}
+    class="absolute -translate-x-1/2 -translate-y-1/2 left-0 top-1/2 z-10 py-[18px] px-[20px] bg-blue-100 border-blue-600 border-2 rounded-full scale-75 sm:scale-100 "
+  >
+    <img src="/icons/triangle.svg" alt="previous" class="-scale-100" />
+  </button>
+  <button
+    on:click={handleSlideNext}
+    class="absolute translate-x-1/2 -translate-y-1/2 right-0 top-1/2 z-10 py-[18px] px-[20px] bg-blue-100 border-blue-600 border-2 rounded-full scale-75 sm:scale-100 "
+  >
+    <img src="/icons/triangle.svg" alt="next" />
+  </button>
+</div>

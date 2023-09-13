@@ -1,12 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Home/Header';
 import { getAllListings } from '../../sanity/api.js';
 import FinalCta from 'components/Common/FinalCta.astro';
 import { PortableText } from '@portabletext/react';
 import Slider from 'components/Listings/Slider';
 import moment from 'moment';
-import ListingSideBar from 'components/Listings/ListingSideBar';
+import ListingSideBar from 'components/Listings/ListingSideBar.astro';
 
 export async function getStaticPaths() {
   const listings = await getAllListings();

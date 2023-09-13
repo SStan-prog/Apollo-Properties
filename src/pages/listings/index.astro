@@ -2,13 +2,13 @@
 import { getAllListings } from 'sanity/api';
 const listings = await getAllListings();
 
-const acitveListings = listings.filter((listing: any) => {
+const activeListings = listings.filter((listing: any) => {
   if (!listing.hideListing) return listing;
 });
 
 import Layout from 'layouts/Layout.astro';
 import Header from 'components/Common/Header.astro';
-import Listings from 'components/Listings/index';
+import Listings from 'components/Listings/index.astro';
 import FinalCta from 'components/Common/FinalCta.astro';
 ---
 
@@ -17,6 +17,6 @@ import FinalCta from 'components/Common/FinalCta.astro';
   description="Fully Furnished or Fully Equipped Apartments, are apartments that allow people arriving directly from overseas a very easy transition into life here in Japan."
 >
   <Header heading={'Available Listings'} />
-  <Listings listings={acitveListings} client:load />
+  <Listings listings={activeListings} client:load />
   <FinalCta />
 </Layout>
