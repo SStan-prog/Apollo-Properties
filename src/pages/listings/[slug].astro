@@ -26,7 +26,7 @@ const { listing } = Astro.props;
 
 <Layout title={listing.name} description={'test'}>
   <section class="flex items-start py-20 bg-grey-100 px-10 gap-5 md:gap-10">
-    <div class="flex flex-1 px-10">
+    <div class="flex flex-1 px-10 w-3/4">
       <div
         class="bg-white lg:shadow py-10 px-8 sm:p-10 rounded-none lg:rounded-2xl"
       >
@@ -84,7 +84,7 @@ const { listing } = Astro.props;
         </div>
       </div>
     </div>
-    <ListingSideBar currentListing={listing} allListings={allListings} />
+    <ListingSideBar currentListing={listing} allListings={allListings} class="w-1/4"/>
   </section>
 </Layout>
 <FinalCta />
