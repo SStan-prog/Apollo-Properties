@@ -1,5 +1,6 @@
 ---
 import type ListingType from 'interfaces';
+import { Image } from '@astrojs/image/components';
 
 const { currentListing, allListings } = Astro.props;
 
@@ -16,41 +17,52 @@ const activeListings = allListings.filter((sideBarListing: { hideListing: any; }
     .slice(0, 3);
 ---
 
-<section class="w-96">
-  <div class="flex flex-col items-center">
+<section class="relative w-96">
+  <div class="flex flex-col justify-center items-center">
     <h2 class="text-blue-700 text-2xl font-bold mb-4">
       Other apartments you may like
     </h2>
 
-    <div class=" flex flex-col items-center">
-      {sideBarListings.map((listing: ListingType) => {
-        return (
-          <a
-            href={`/listings/${listing.slug?.current}`}
-            class="text-blue-400 text-l sm:text-xs font-body inline-block font-bold rounded-md"
-          >
-            <div class="flex flex-col py-8 px-8 sm:p-4 rounded-lg w-auto duration-500 hover:shadow-lg hover:bg-opacity-80 hover:bg-white">
-              <div class="flex">
-                <div class="flex justify-center items-center w-full lg:w-1/2 pr-8">
-                  <p>image here</p>
-                </div>
-                <div class="flex flex-col lg:w-full h-full">
-                  <h5 class="text-blue-600 font-bold sm:text-xl mb-1">
-                    {listing.name}
-                  </h5>
-                  <p class="text-grey-600 sm:text-l mb-1">
-                    {listing.address}
-                  </p>
-                  <p class="text-blue-700 sm:text-l mb-1">
-                    <span class="sm:text-xl font-bold">
-                      ¥{listing.price}
-                    </span>{' '}
-                    <span class="whitespace-nowrap">per month</span>
-                  </p>
-                </div>
+  <div class=" flex flex-col items-center">
+    {sideBarListings.map((listing: ListingType) => {
+      return (
+        <a
+          href={`/listings/${listing.slug?.current}`}
+          class="text-blue-400 text-l sm:text-xs font-body inline-block font-bold rounded-md"
+        >
+          <div class="flex flex-col py-8 px-8 sm:p-4 rounded-lg w-auto duration-500 hover:shadow-lg hover:bg-opacity-80 hover:bg-white">
+            <div class="flex justify-center items-center">
+              <div class="h-full w-1/2">
+                <Image
+                  src="/images/office.jpg"
+                  alt="Listing Card Image"
+                  width={1000}
+                  height={700}
+                  aspectRatio={4 / 3}
+                  format="webp"
+                  fit="cover"
+                  position="center"
+                  class="rounded-[15px] sm:rounded-[15px]"
+                  quality={100}
+                />
+              </div>
+              <div class="flex flex-col h-full w-1/2 pl-4">
+                <h5 class="text-blue-600 font-bold sm:text-base leading-4 mb-1">
+                  {listing.name}
+                </h5>
+                <p class="text-grey-600 text-m sm:text-l mb-1">
+                  {listing.address}
+                </p>
+                <p class="text-blue-700 sm:text-l mb-1">
+                  <span class="sm:text-base font-bold">
+                    ¥{listing.price}
+                  </span>{' '}
+                  <span class="whitespace-nowrap">per month</span>
+                </p>
               </div>
             </div>
-          </a>
+          </div>
+        </a>
         );
       })}
 

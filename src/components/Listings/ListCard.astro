@@ -1,44 +1,54 @@
 ---
 import moment from 'moment';
-import Slider from './Slider';
+import { Image } from '@astrojs/image/components';
 
 const { listing } = Astro.props;
 
 ---
 
-<div class="bg-white lg:shadow py-8 px-8 sm:p-4 rounded-lg w-auto">
-  <div class="flex flex-wrap">
-    <div class="flex justify-center items-start">
-      <div class="flex w-full lg:w-1/2 pr-8">
-        <Slider images={listing.images } />
-      </div>
-      <div class="flex flex-col w-full lg:w-1/2 h-full">
-        <h2 class="text-blue-700 font-bold sm:text-xl">
-          {listing.name}
-        </h2>
-        <p class="text-grey-600 sm:text-l mb-1">{listing.address}</p>
-        <p class="text-blue-600 sm:text-l mb-1">
-          <span class="sm:text-xl font-bold"> ¥{listing.price}</span>{' '}
-          <span class="whitespace-nowrap">per month</span>
-        </p>
-        <p class="text-grey-600 sm:text-m">
-          <strong class="text-blue-600">Available from:</strong>{' '}
-          {moment(listing.availability).format('MMMM Do, YYYY')}
-        </p>
-        <p class="text-grey-600 sm:text-m">
-          <strong class="text-blue-600">Size:</strong> {listing.size} m
-          <sup>2</sup>
-        </p>
+<section class="relative min-w-[600px] bg-white lg:shadow py-4 px-4 rounded-lg">
+  <div class="flex justify-center items-center sm:flex-row sm:flex-wrap">
+    <div class="flex items-center h-full w-1/2">
+      <Image
+        src="/images/office.jpg"
+        alt="Listing Card Image"
+        width={1000}
+        height={750}
+        aspectRatio={4 / 3}
+        format="webp"
+        fit="cover"
+        position="center"
+        class="rounded-[15px] sm:rounded-[15px]"
+        quality={100}
+        />
+    </div>
 
-        <div>
-          <a
-            href={`/listings/${listing.slug?.current}`}
-            class="bg-blue-400 hover:bg-blue-600 text-white text-l sm:text-m font-body py-1 px-4 inline-block font-bold rounded-md hover:shadow-none shadow-lg whitespace-nowrap transition-all mt-6"
-          >
-            View Listing
-          </a>
-        </div>
+    <div class="flex flex-col w-1/2 pl-4">
+      <h2 class="text-blue-700 font-bold sm:text-xl">
+        {listing.name}
+      </h2>
+      <p class="text-grey-600 sm:text-l mb-1">{listing.address}</p>
+      <p class="text-blue-600 sm:text-l mb-1">
+        <span class="sm:text-xl font-bold"> ¥{listing.price}</span>{' '}
+        <span class="whitespace-nowrap">per month</span>
+      </p>
+      <p class="text-grey-600 sm:text-m">
+        <strong class="text-blue-600">Available from:</strong>{' '}
+        {moment(listing.availability).format('MMMM Do, YYYY')}
+      </p>
+      <p class="text-grey-600 sm:text-m">
+        <strong class="text-blue-600">Size:</strong> {listing.size} m
+        <sup>2</sup>
+      </p>
+
+      <div>
+        <a
+          href={`/listings/${listing.slug?.current}`}
+          class="bg-blue-400 hover:bg-blue-600 text-white text-l sm:text-m font-body py-1 px-4 inline-block font-bold rounded-md hover:shadow-none shadow-lg whitespace-nowrap transition-all mt-8"
+        >
+          View Listing
+        </a>
       </div>
     </div>
   </div>
-</div>
+</section>
