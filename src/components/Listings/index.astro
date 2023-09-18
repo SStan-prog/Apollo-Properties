@@ -4,17 +4,12 @@ import ListCard from './ListCard.astro';
 const { listings } = Astro.props;
 ---
 
-<section class="bg-grey-100">
-  <div class="max-w-[1400px] mx-auto lg:px-10 lg:py-20">
-    <div class="flex flex-col items-center lg:items-start lg:flex-row lg:gap-10 xl:gap-32 justify-items-center">
-      <div class="grid grid-cols-2 gap-10 w-full">
-        {
-          listings.map((listing: any) => {
-           return <ListCard listing={listing} />;
-          })
-        }
-
-      </div>
-    </div>
+<section class="bg-grey-100 w-full mx-auto">
+  <div class="grid xl:grid-cols-2 lg:grid-cols-1 p-10 gap-10">
+    {
+      listings.map((listing: any) => {
+        return <ListCard listing={listing} />;
+      })
+    }
   </div>
 </section>
