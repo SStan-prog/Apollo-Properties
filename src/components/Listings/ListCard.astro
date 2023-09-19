@@ -1,56 +1,50 @@
 ---
 import moment from 'moment';
 import { Image } from '@astrojs/image/components';
-
+import { urlFor } from 'sanity/imageBuilder';
+import Btn from 'components/Common/Buttons/Btn.astro';
 const { listing } = Astro.props;
 
+console.log(listing);
 ---
 
-<section class="bg-white sm:max-w-[650px] sm:max-height-[250px] lg:shadow py-4 px-4 rounded-lg">
-  <div class="flex justify-center h-full">
-    <div class="md:w-1/2 sm:w-auto sm:h-auto">
-      <Image
-        src="/images/office.jpg"
-        alt="Listing Card Image"
-        width={1000}
-        height={750}
-        aspectRatio={4/3}
-        format="webp"
-        fit="cover"
-        position="center"
-        class="rounded-[15px] sm:rounded-[15px]"
-        quality={100}
-        />
-    </div>
+<section
+  class="bg-white w-full sm:max-w-[820px] lg:shadow py-4 px-4 rounded-xl sm:rounded-[20px]"
+>
+  <div class="grid grid-cols-1 gap-6 sm:gap-0 sm:grid-cols-[40%,60%] h-full">
+    <img
+      src={urlFor(listing.images[0].asset).format('webp').url()}
+      alt={listing.images[0].alt}
+      class="rounded-xl sm:rounded-[20px] w-full h-full object-cover"
+    />
 
-    <div class="flex flex-col h-full pl-4">
-      <div class="mb-auto">
-        <h2 class="text-blue-700 font-bold md:text-l sm:text-m">
+    <div class="flex flex-col h-full gap-6 sm:ml-10">
+      <div class="">
+        <h2 class="text-blue-700 font-bold text-xl sm:text-2xl mb-2">
           {listing.name}
         </h2>
-        <p class="text-grey-600 md:text-m sm:text-s mb-1">{listing.address}</p>
-        <p class="text-blue-600 md:text-m sm:text-s mb-1">
-          <span class="md:text-m sm:text-s font-bold"> ¥{listing.price}</span>{' '}
-          <span class="whitespace-nowrap">per month</span>
+        <p class="text-grey-600 text-lg mb-2.5">
+          {listing.address}
         </p>
-        <p class="text-grey-600 md:text-m sm:text-s">
+        <p class="text-blue-600 mb-2.5">
+          <span class="font-bold text-lg sm:text-xl"> ¥{listing.price}</span>{
+            ' '
+          }
+          <span class="whitespace-nowrap text-base">per month</span>
+        </p>
+        <p class="text-grey-600">
           <strong class="text-blue-600">Available from:</strong>{' '}
           {moment(listing.availability).format('MMMM Do, YYYY')}
         </p>
-        <p class="text-grey-600 md:text-m sm:text-s">
-          <strong class="text-blue-600">Size:</strong> {listing.size} m
+        <p class="text-grey-600">
+          <strong class="text-blue-600">Size:</strong>
+          {listing.size} m
           <sup>2</sup>
         </p>
       </div>
 
-
       <div class="mt-auto">
-        <a
-          href={`/listings/${listing.slug?.current}`}
-          class="bg-blue-400 hover:bg-blue-600 text-white text-l sm:text-m font-body py-1 px-4 inline-block font-bold rounded-md hover:shadow-none shadow-lg whitespace-nowrap transition-all"
-        >
-          View Listing
-        </a>
+        <Btn href={`/listings/${listing.slug?.current}`} text="View Listing" />
       </div>
     </div>
   </div>
