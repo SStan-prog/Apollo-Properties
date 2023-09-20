@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 ---
 
 <section>
@@ -73,11 +73,7 @@ import { Image } from '@astrojs/image/components';
             src="/images/ffa/inclusions.jpg"
             alt="A fully furnished apartment located in Namba, Osaka."
             width={400}
-            aspectRatio={4 / 3}
-            format="webp"
-            fit="cover"
-            position="center"
-            background="transparent"
+            height={300}
             class="rounded-[15px] sm:rounded-[35px]"
           />
         </div>
@@ -86,11 +82,7 @@ import { Image } from '@astrojs/image/components';
         src="/images/ffa/osaka.jpg"
         alt="A road of shops in Shin-sekai, Osaka."
         width={500}
-        aspectRatio={4 / 3}
-        format="webp"
-        fit="cover"
-        position="center"
-        background="transparent"
+        height={400}
         class="rounded-[20px] sm:rounded-[40px] relative col-[2/6] row-[1/2] row-start-1 -scale-x-100"
       />
     </div>

@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 ---
 
 <section>
@@ -12,10 +12,6 @@ import { Image } from '@astrojs/image/components';
         alt="A fully furnished apartment building located in Tennoji, Osaka."
         width={960}
         height={1280}
-        aspectRatio={1 / 1}
-        format="webp"
-        fit="cover"
-        position="center"
         class="xl:rounded-r-[20px] h-full w-full object-cover"
       />
     </div>
