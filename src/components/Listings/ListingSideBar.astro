@@ -42,6 +42,7 @@ const sideBarListings = activeListings
                       <div class="h-full">
                         <img
                           src={urlFor(listing?.images[0]?.asset)
+                            .width(300)
                             .format('webp')
                             .url()}
                           alt={listing.images[0].alt}
