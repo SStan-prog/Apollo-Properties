@@ -1,0 +1,124 @@
+<div class="bg-white p-5 sm:p-10 rounded-[40px]">
+  <h2 class="text-xl md:text-3xl font-heading font-bold text-blue-600 mb-10 md:mb-14 leading-relaxed">
+    We would love to hear from you.
+    <br /> How can we help?
+  </h2>
+  <form method="POST" action="/thank-you" data-netlify="true" name="contact">
+    <input type="hidden" name="form-name" value="contact" />
+    <div class="flex flex-col md:flex-row gap-5 w-full mb-6">
+      <div class="flex flex-col w-full">
+        <input
+          type="text"
+          id="first"
+          required
+          name="First name"
+          placeholder="First name"
+          class="peer bg-grey-100 text-grey-700 p-3 rounded border-2 border-transparent focus:border-blue-200 outline-none placeholder-transparent transition-colors "
+        />
+        <label
+          for="first"
+          class="ml-[13px]  
+          -translate-y-[80px] text-blue-600 font-bold
+          peer-placeholder-shown:-translate-y-[38px]  peer-placeholder-shown:text-grey-500 peer-placeholder-shown:font-medium 
+          peer-focus:-translate-y-[80px] peer-focus:font-bold  peer-focus:text-blue-600  
+          transition-all
+         "
+        >
+          First name
+        </label>
+      </div>
+      <div class="flex flex-col w-full">
+        <input
+          type="text"
+          id="last"
+          required
+          name="Last name"
+          placeholder="Last name"
+          class="peer bg-grey-100 text-grey-700 p-3 rounded border-2 border-transparent focus:border-blue-200 outline-none placeholder-transparent transition-colors "
+        />
+        <label
+          for="last"
+          class="ml-[13px]  
+          -translate-y-[80px] text-blue-600 font-bold
+          peer-placeholder-shown:-translate-y-[38px]  peer-placeholder-shown:text-grey-500 peer-placeholder-shown:font-medium 
+          peer-focus:-translate-y-[80px] peer-focus:font-bold  peer-focus:text-blue-600  
+          transition-all
+         "
+        >
+          Last name
+        </label>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-5 w-full mb-10">
+      <div class="flex flex-col w-full">
+        <input
+          type="email"
+          id="email"
+          required
+          name="Email"
+          placeholder="Email address"
+          class="peer bg-grey-100 text-grey-700 p-3 rounded border-2 border-transparent focus:border-blue-200 outline-none placeholder-transparent transition-colors "
+        />
+        <label
+          for="email"
+          class="ml-[13px]  
+          -translate-y-[80px] text-blue-600 font-bold
+          peer-placeholder-shown:-translate-y-[38px]  peer-placeholder-shown:text-grey-500 peer-placeholder-shown:font-medium 
+          peer-focus:-translate-y-[80px] peer-focus:font-bold  peer-focus:text-blue-600  
+          transition-all
+         "
+        >
+          Email address
+        </label>
+      </div>
+      <div class="flex flex-col w-full">
+        <input
+          id="Phone"
+          name="Phone name"
+          placeholder="Phone number"
+          class="peer bg-grey-100 text-grey-700 p-3 rounded border-2 border-transparent focus:border-blue-200 outline-none placeholder-transparent transition-colors "
+        />
+        <label
+          for="Phone"
+          class="ml-[13px]  
+          -translate-y-[80px] text-blue-600 font-bold
+          peer-placeholder-shown:-translate-y-[38px]  peer-placeholder-shown:text-grey-500 peer-placeholder-shown:font-medium 
+          peer-focus:-translate-y-[80px] peer-focus:font-bold  peer-focus:text-blue-600  
+          transition-all
+         "
+        >
+          Phone number
+        </label>
+      </div>
+    </div>
+    <div class="flex gap-5 w-full mb-10">
+      <div class="flex flex-col w-full relative">
+        <textarea
+          id="message"
+          name="Message"
+          required
+          rows={5}
+          placeholder="message"
+          class="peer resize-y bg-grey-100 text-grey-700 p-3 rounded border-2 border-transparent focus:border-blue-200 outline-none placeholder-transparent transition-colors "
+        />
+        <label
+          for="message"
+          class="ml-[13px] absolute
+          -top-[30px] text-blue-600 font-bold
+          peer-placeholder-shown:top-[10px]  peer-placeholder-shown:text-grey-500 peer-placeholder-shown:font-medium 
+          peer-focus:-top-[30px] peer-focus:font-bold  peer-focus:text-blue-600  
+          transition-all
+         "
+        >
+          How can we help?
+        </label>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="mx-auto w-full bg-blue-400 hover:bg-blue-600 text-white text-lg sm:text-2xl font-body py-2 px-4 sm:py-3 sm:px-6 inline-block font-bold rounded-md hover:shadow-none shadow-lg whitespace-nowrap transition-all"
+    >
+      Submit
+    </button>
+  </form>
+</div>

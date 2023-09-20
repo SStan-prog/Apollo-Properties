@@ -4,6 +4,17 @@ export default {
   title: 'Listings',
   fields: [
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      description: 'The URL that visitor will visit to see the listing',
+      validation: (Rule: any) => Rule.required(),
+      options: {
+        source: 'name',
+        maxLength: 96,
+      },
+    },
+    {
       name: 'hideListing',
       type: 'boolean',
       title: 'Hide Listing',

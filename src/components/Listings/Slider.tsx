@@ -25,13 +25,9 @@ const Slider = ({ images }: SliderProps) => {
           return (
             <SwiperSlide key={i}>
               <img
-                src={urlFor(image.asset)
-                  .width(1000)
-                  .height(750)
-                  .format('webp')
-                  .url()}
+                src={urlFor(image.asset).format('webp').url()}
                 alt={image['alt']}
-                className="rounded-[20px] md:rounded-[40px] aspect-[4/3] object-contain aspectFix"
+                className="rounded-[20px] md:rounded-[40px] w-full h-auto aspect-[4/3] object-contain mx-auto "
               />
             </SwiperSlide>
           );

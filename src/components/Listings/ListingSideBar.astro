@@ -1,0 +1,84 @@
+---
+import type ListingType from 'interfaces';
+import { urlFor } from 'sanity/imageBuilder';
+
+const { currentListing, allListings } = Astro.props;
+
+const activeListings = allListings.filter(
+  (sideBarListing: { hideListing: any }) => {
+    if (!sideBarListing.hideListing) return sideBarListing;
+  }
+);
+
+const currentSlug = currentListing.slug.current;
+
+const sideBarListings = activeListings
+  .filter((sideBarListing: { slug: { current: any } }) => {
+    if (sideBarListing.slug.current !== currentSlug) return sideBarListing;
+  })
+  .slice(0, 3);
+---
+
+<section
+  class="xl:mt-0 mt-16 md:mt-20 mx-auto xl:mx-0 max-w-md w-full xl:w-96 xl:sticky top-10"
+>
+  <div class="flex flex-col justify-center items-center">
+    <h2 class="text-blue-700 text-2xl font-bold mb-4 text-center xl:text-left">
+      Other apartments you may like
+    </h2>
+
+    <div class="flex flex-col items-center">
+      <ul>
+        {
+          sideBarListings.map((listing: any) => {
+            return (
+              <li class="border-b  border-b-grey-300 last:border-b-0">
+                <a
+                  href={`/listings/${listing.slug?.current}`}
+                  class="text-blue-600  font-body inline-block font-bold "
+                >
+                  <div class="flex flex-col my-4 py-4 p-4 rounded-lg w-auto duration-500 hover:shadow-lg hover:bg-opacity-80 hover:bg-white">
+                    <div class="flex flex-col-reverse sm:grid sm:grid-cols-2 items-start sm:items-center">
+                      <div class="h-full">
+                        <img
+                          src={urlFor(listing?.images[0]?.asset)
+                            .format('webp')
+                            .url()}
+                          alt={listing.images[0].alt}
+                          class="rounded-lg w-full h-full object-cover"
+                        />
+                      </div>
+                      <div class="flex flex-col  h-full sm:pl-4 mb-4 sm:mb-0">
+                        <h5 class="text-blue-600 font-bold text-base leading-4 mb-1 break-all">
+                          {listing.name}
+                        </h5>
+                        <p class="text-grey-600 font-normal text-sm mb-1">
+                          {listing.address}
+                        </p>
+                        <p class="text-blue-700  mb-1">
+                          <span class=" font-bold">¥{listing.price}</span>{' '}
+                          <span class="whitespace-nowrap text-xs">
+                            per month
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+      <div class="border-t border-gray-300 my-2"></div>
+      <div>
+        <a
+          href={'/listings'}
+          class="text-blue-400 text-l underline sm:text-m font-body font-bold"
+        >
+          View all listings
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
