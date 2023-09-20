@@ -1,0 +1,49 @@
+---
+import moment from 'moment';
+
+import { urlFor } from 'sanity/imageBuilder';
+import Btn from 'components/Common/Buttons/Btn.astro';
+const { listing } = Astro.props;
+---
+
+<section
+  class="bg-white w-full sm:max-w-[820px] lg:shadow py-4 px-4 rounded-xl sm:rounded-[20px]"
+>
+  <div class="grid grid-cols-1 gap-6 sm:gap-0 sm:grid-cols-[40%,60%] h-full">
+    <img
+      src={urlFor(listing.images[0].asset).format('webp').url()}
+      alt={listing.images[0].alt}
+      class="rounded-xl sm:rounded-[20px] w-full h-full object-cover"
+    />
+
+    <div class="flex flex-col h-full gap-6 sm:ml-10">
+      <div class="">
+        <h2 class="text-blue-700 font-bold text-xl sm:text-2xl mb-2">
+          {listing.name}
+        </h2>
+        <p class="text-grey-600 text-lg mb-2.5">
+          {listing.address}
+        </p>
+        <p class="text-blue-600 mb-2.5">
+          <span class="font-bold text-lg sm:text-xl"> ¥{listing.price}</span>{
+            ' '
+          }
+          <span class="whitespace-nowrap text-base">per month</span>
+        </p>
+        <p class="text-grey-600">
+          <strong class="text-blue-600">Available from:</strong>{' '}
+          {moment(listing.availability).format('MMMM Do, YYYY')}
+        </p>
+        <p class="text-grey-600">
+          <strong class="text-blue-600">Size:</strong>
+          {listing.size} m
+          <sup>2</sup>
+        </p>
+      </div>
+
+      <div class="mt-auto">
+        <Btn href={`/listings/${listing.slug?.current}`} text="View Listing" />
+      </div>
+    </div>
+  </div>
+</section>
