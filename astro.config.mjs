@@ -26,4 +26,5 @@ export default defineConfig({
     svelte(),
     sitemap(),
   ],
+  site: 'https://apollopropertiesosaka.com/',
 });
