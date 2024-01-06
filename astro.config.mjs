@@ -1,8 +1,6 @@
 import { defineConfig } from 'astro/config';
-
 import tailwind from '@astrojs/tailwind';
 
-// https://astro.build/config
 import react from '@astrojs/react';
 
 // https://astro.build/config
@@ -10,8 +8,10 @@ import sanity from 'astro-sanity';
 
 // https://astro.build/config
 import svelte from '@astrojs/svelte';
-
 import sitemap from '@astrojs/sitemap';
+
+// https://astro.build/config
+import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,4 +27,6 @@ export default defineConfig({
     sitemap(),
   ],
   site: 'https://apollopropertiesosaka.com/',
+  output: 'hybrid',
+  adapter: netlify(),
 });
