@@ -1,5 +1,5 @@
 ---
-import { urlForImage } from 'sanity/urlForImage';
+import { urlFor } from '../../sanity/imageBuilder.js';
 const { articles } = Astro.props;
 const articlesSliced = articles.slice(1);
 ---
@@ -16,7 +16,7 @@ const articlesSliced = articles.slice(1);
               <div class="">
                 <img
                   class="rounded-t-[10px] sm:rounded-t-[20px] aspect-[4/2.8] "
-                  src={urlForImage(article.featuredImage).format('webp').url()}
+                  src={urlFor(article.featuredImage.asset).format('webp').url()}
                   alt={article.featuredImage.alt}
                 />
               </div>

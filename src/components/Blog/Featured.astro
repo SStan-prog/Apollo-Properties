@@ -1,8 +1,9 @@
 ---
-import { urlForImage } from "sanity/urlForImage";
+import { urlForImage } from 'sanity/urlForImage';
+import { urlFor } from '../../sanity/imageBuilder.js';
 const { featured } = Astro.props;
 
-import Btn from "components/Common/Buttons/Btn.astro";
+import Btn from 'components/Common/Buttons/Btn.astro';
 ---
 
 <section class="my-10">
@@ -13,9 +14,9 @@ import Btn from "components/Common/Buttons/Btn.astro";
       <div>
         <img
           class="rounded-[30px] lg:rounded-[50px]"
-          src={urlForImage(featured.featuredImage)
+          src={urlFor(featured.featuredImage.asset)
             .width(800)
-            .format("webp")
+            .format('webp')
             .url()}
           alt={featured.featuredImage.alt}
         />
