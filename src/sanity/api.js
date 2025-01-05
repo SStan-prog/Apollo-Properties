@@ -1,19 +1,19 @@
-import { useSanityClient, groq } from 'astro-sanity';
+import { sanityClient } from 'sanity:client';
 
 export async function getLatestArticle() {
-  const query = groq`*[_type == "article"] | order(_createdAt desc)[0] `;
-  const firstArticle = await useSanityClient().fetch(query);
+  const query = `*[_type == "article"] | order(_createdAt desc)[0] `;
+  const firstArticle = await sanityClient.fetch(query);
   return firstArticle;
 }
 
 export async function getAllArticles() {
-  const query = groq`*[_type == "article"] | order(_createdAt desc)`;
-  const articles = await useSanityClient().fetch(query);
+  const query = `*[_type == "article"] | order(_createdAt desc)`;
+  const articles = await sanityClient.fetch(query);
   return articles;
 }
 
 export async function getAllListings() {
-  const query = groq`*[_type == "listing"] | order(availability asc)`;
-  const listings = await useSanityClient().fetch(query);
+  const query = `*[_type == "listing"] | order(availability asc)`;
+  const listings = await sanityClient.fetch(query);
   return listings;
 }

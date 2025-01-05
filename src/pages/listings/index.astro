@@ -1,5 +1,5 @@
 ---
-import { getAllListings } from 'sanity/api';
+import { getAllListings } from '../../sanity/api';
 const listings = await getAllListings();
 
 const activeListings = listings.filter((listing: any) => {
