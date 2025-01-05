@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperCore } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { urlForImage } from 'sanity/urlForImage';
+
 import { urlFor } from '../../sanity/imageBuilder.js';
 
 interface SliderProps {

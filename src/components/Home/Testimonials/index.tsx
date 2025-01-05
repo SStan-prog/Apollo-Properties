@@ -1,3 +1,4 @@
+'use client';
 import React, { useRef } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -20,7 +21,12 @@ const index = () => {
 
         <div className="flex flex-col w-full items-center py-20 px-5 sm:px-10 lg:px-20 max-w-[800px]  mx-auto">
           <div className="mb-5 lg:block hidden">
-            <img src="icons/quote.svg" alt="testimonials" width={52} height={39} />
+            <img
+              src="icons/quote.svg"
+              alt="testimonials"
+              width={52}
+              height={39}
+            />
           </div>
           <div className="relative pt-5 lg:pt-0">
             {' '}
@@ -98,8 +104,12 @@ const index = () => {
               onClick={() => swiperRef.current?.slideNext()}
               className="absolute translate-x-14  sm:translate-x-20 lg:translate-x-1/2 -translate-y-1/2 left-0 -top-8 lg:left-auto lg:right-0 lg:top-1/3 z-10 py-[18px] px-[20px] bg-blue-100 border-blue-600 border-2 rounded-full scale-75 sm:scale-100 "
             >
-              <img src="/icons/triangle.svg" alt="next"   width={15}
-                height={19} />
+              <img
+                src="/icons/triangle.svg"
+                alt="next"
+                width={15}
+                height={19}
+              />
             </button>
           </div>
           <div className="mt-14 -mb-10">
