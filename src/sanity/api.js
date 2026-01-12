@@ -13,7 +13,7 @@ export async function getAllArticles() {
 }
 
 export async function getAllListings() {
-  const query = `*[_type == "listing"] | order(availability asc)`;
+  const query = `*[_type == "listing"] | order(availability asc) { ..., _createdAt }`;
   const listings = await sanityClient.fetch(query);
   return listings;
 }
