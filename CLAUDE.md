@@ -37,19 +37,27 @@ npm run deploy   # Deploy Sanity Studio
 - **Netlify** adapter for deployment
 
 ### Sanity Integration
-- Project ID: `3ans7o2s`, Dataset: `production`
-- Two content types defined in `sanity-project/schemas/`:
+- Project ID: `3ans7o2s`, Dataset: `production` (also hardcoded in `astro.config.mjs` and `sanity-project/sanity.config.js`)
+- Content types defined as TypeScript in `sanity-project/schemas/` (registered via `index.ts`):
   - `article` - Blog posts with title, slug, excerpt, featured image, and body (blockContent)
-  - `listing` - Property listings with name, address, price, size, availability date, images, and description
-- API functions in `src/sanity/api.js` for fetching content
+  - `listing` - Property listings with name, slug, `hideListing` boolean, address, price, size, `availability` (date), images, and description (blockContent)
+  - `blockContent` - Shared rich-text/portable-text type used by article body and listing description
+- API functions in `src/sanity/api.js` for fetching content (all queries live here)
 - Two Sanity clients exist:
   - `src/sanity/sanityClient.js` - Manual client (useCdn: true)
   - `sanity:client` from `@sanity/astro` - Used in API functions (useCdn: false for build)
+
+**`hideListing` gotcha:** `getAllListings()` returns *all* listings including hidden ones. Callers must filter with `.filter(listing => !listing.hideListing)` before rendering (see `src/pages/rss.xml.js` and the Listings components). Don't assume the API pre-filters.
 
 ### Dynamic Routes
 - `/blog/[slug].astro` - Individual blog articles
 - `/listings/[slug].astro` - Individual property listings
 - Both use `getStaticPaths()` for SSG
+
+### SEO / Feeds
+Configured as Astro integrations in `astro.config.mjs` (`site` is set to `https://apollopropertiesosaka.com/`):
+- `@astrojs/sitemap` and `astro-robots-txt` generate `sitemap-*.xml` and `robots.txt` at build time
+- `src/pages/rss.xml.js` builds a combined RSS feed of articles + (non-hidden) listings, sorted newest-first
 
 ### Component Patterns
 - Interactive components use React (`.tsx`) or Svelte (`.svelte`) with client directives (`client:load`, `client:idle`)

@@ -38,7 +38,7 @@ const { listings, activeListing} = Astro.props
           Contact Us About This Listing
         </a>
         <div class="w-full my-10">
-          <Slider images={listing.images} />
+          <Slider images={listing.images} client:only="react" />
         </div>
         <div class="">
           <p class="text-blue-600 font-bold text-xl">About the property</p>
